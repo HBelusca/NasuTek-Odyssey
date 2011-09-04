@@ -1,0 +1,9 @@
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"W32 more command\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"more\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"more.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

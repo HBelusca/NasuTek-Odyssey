@@ -1,0 +1,9 @@
+// Don't translate this file at current time
+
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+STRINGTABLE
+BEGIN
+    IDS_ODYSSEY_FONTS_FOLDER "Odyssey Font Folder"
+END
+

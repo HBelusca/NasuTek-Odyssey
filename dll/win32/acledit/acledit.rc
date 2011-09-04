@@ -1,0 +1,8 @@
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Access Control Editor\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"acledit\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"acledit.dll\0"
+#include <odyssey/version.rc>

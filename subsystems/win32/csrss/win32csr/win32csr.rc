@@ -1,0 +1,10 @@
+#include <win32csr.h>
+#include "resource.h"
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"CSRSS subsystem usermode code\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"win32csr\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"win32csr.dll\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

@@ -1,0 +1,30 @@
+; Format:
+;   COMPONENT_NAME PATH_TO_COMPONENT_SOURCES
+; COMPONENT_NAME            - Name of the module. Eg. kernel32.
+; PATH_TO_COMPONENT_SOURCES - Relative path to sources (relative to where rgenstat is run from).
+
+advapi32 ../odyssey/dll/win32/advapi32
+crtdll ../odyssey/dll/win32/crtdll
+gdi32 ../odyssey/dll/win32/gdi32
+gdiplus ../odyssey/dll/win32/gdiplus
+iphlpapi ../odyssey/dll/win32/iphlpapi
+kernel32 ../odyssey/dll/win32/kernel32
+msvcrt ../odyssey/dll/win32/msvcrt
+rasapi32 ../odyssey/dll/win32/rasapi32
+rasdlg ../odyssey/dll/win32/rasdlg
+rasman ../odyssey/dll/win32/rasman
+rpcrt4 ../odyssey/dll/win32/rpcrt4
+secur32 ../odyssey/dll/win32/secur32
+snmpapi ../odyssey/dll/win32/snmpapi
+user32 ../odyssey/dll/win32/user32
+version ../odyssey/dll/win32/version
+winspool ../odyssey/dll/win32/winspool
+ws2_32 ../odyssey/dll/win32/ws2_32
+wsock32 ../odyssey/dll/win32/wsock32
+videoprt ../odyssey/drivers/video/videoprt
+ndis ../odyssey/drivers/network/ndis
+tdi ../odyssey/drivers/network/tdi
+scsiport ../odyssey/drivers/storage/scsiport
+ntoskrnl ../odyssey/ntoskrnl
+rtl ../odyssey/lib/rtl
+win32k ../odyssey/subsystems/win32/win32k

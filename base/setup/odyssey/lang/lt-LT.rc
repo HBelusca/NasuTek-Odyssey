@@ -1,0 +1,10 @@
+// Translation by Vytis 'CMan' Girdþijauskas cman@cman.us
+
+LANGUAGE LANG_LITHUANIAN, SUBLANG_DEFAULT
+
+/* String Tables */
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_CAPTION  "Odyssey Ádiegimas"
+    IDS_TEXT     "Jûs negalite ádiegti Odyssey tiesiogiai ið ðio CD!\n\nNorëdami ádiegti Odyssey, praðome perkrauti Jûsø kompiuterá su ðiuo CD."
+END

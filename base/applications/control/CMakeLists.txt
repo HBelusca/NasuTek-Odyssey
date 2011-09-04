@@ -1,0 +1,8 @@
+
+set_rc_compiler()
+
+add_executable(control control.c control.rc)
+
+set_module_type(control win32gui UNICODE)
+add_importlibs(control advapi32 shell32 msvcrt kernel32)
+add_cd_file(TARGET control DESTINATION odyssey/system32 FOR all)

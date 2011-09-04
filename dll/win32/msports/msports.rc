@@ -1,0 +1,16 @@
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Ports Class Installer\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"msports\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"msports.dll\0"
+#include <odyssey/version.rc>
+
+#include "lang/de-DE.rc"
+#include "lang/en-US.rc"
+
+// UTF-8
+#pragma code_page(65001)
+#include "lang/pl-PL.rc"
+#include "lang/uk-UA.rc"

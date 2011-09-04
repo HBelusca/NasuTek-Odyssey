@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Canadian French (Legacy) Keyboard Layout\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbdfc\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbdfc.dll\0"
+#include <odyssey/version.rc>

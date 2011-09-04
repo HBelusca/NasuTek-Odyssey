@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"NTFS File System Management\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"untfs\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"untfs.dll\0"
+#include <odyssey/version.rc>

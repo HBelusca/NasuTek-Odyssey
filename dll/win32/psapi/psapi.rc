@@ -1,0 +1,7 @@
+/* $Id: psapi.rc 21298 2006-03-12 00:08:41Z jimtabor $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Process Status Helper\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"psapi\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"psapi.dll\0"
+#include <odyssey/version.rc>

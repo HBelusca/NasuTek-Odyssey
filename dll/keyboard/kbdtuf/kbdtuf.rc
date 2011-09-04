@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Turkish F Keyboard Layout\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbdtuf\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbdtuf.dll\0"
+#include <odyssey/version.rc>

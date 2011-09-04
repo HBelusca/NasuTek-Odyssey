@@ -1,0 +1,7 @@
+/* $Id: mouclass.rc 21598 2006-04-16 07:11:56Z hpoussin $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Mouse Class Device Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"mouclass\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"mouclass.sys\0"
+#include <odyssey/version.rc>

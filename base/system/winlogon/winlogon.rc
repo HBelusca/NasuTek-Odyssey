@@ -1,0 +1,11 @@
+/* $Id: winlogon.rc 31672 2008-01-08 16:13:01Z dreimer $ */
+
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Logon Application\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"winlogon\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"winlogon.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

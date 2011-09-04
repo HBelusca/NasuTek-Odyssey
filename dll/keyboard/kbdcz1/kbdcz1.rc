@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Czech Keyboard Layout (QWERTY)\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbdcz1\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbdcz1.dll\0"
+#include <odyssey/version.rc>

@@ -1,0 +1,19 @@
+#include "uniata_ver.h"
+
+#define VERSION                         UNIATA_VER_DOT_COMMA
+#define VERSION_STR                     "0." UNIATA_VER_STR
+
+#define ODYSSEY_FILETYPE                VFT_DRV
+#define ODYSSEY_FILESUBTYPE             VFT2_DRV_SYSTEM
+#define ODYSSEY_FILEVERSION             VERSION
+#define ODYSSEY_PRODUCTVERSION          VERSION
+#define ODYSSEY_STR_COMPANY_NAME        "AlterWare & Odyssey Development Team"
+#define ODYSSEY_STR_FILE_DESCRIPTION    "Universal IDE BusMaster (DMA) Miniport Driver"
+#define ODYSSEY_STR_FILE_VERSION        VERSION_STR
+#define ODYSSEY_STR_INTERNAL_NAME       "uniata.sys"
+#define ODYSSEY_STR_ORIGINAL_FILENAME   "uniata.sys"
+#define ODYSSEY_STR_LEGAL_COPYRIGHT     "Copyright 1999-" UNIATA_VER_YEAR_STR " AlterWare, Copyright 2010 ReactOS Team; (C) 2011 NasuTek Enterprises"
+#define ODYSSEY_STR_PRODUCT_NAME        "UniATA Driver for Odyssey"
+#define ODYSSEY_STR_PRODUCT_VERSION     VERSION_STR
+
+#include <odyssey/version.rc>

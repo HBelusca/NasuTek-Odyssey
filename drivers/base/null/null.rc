@@ -1,0 +1,7 @@
+/* $Id: null.rc 21842 2006-05-07 19:16:11Z ion $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Null Device Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"null\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"null.sys\0"
+#include <odyssey/version.rc>

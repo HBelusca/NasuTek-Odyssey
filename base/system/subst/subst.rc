@@ -1,0 +1,7 @@
+#include <windows.h>
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Virtual Drive Utility Version 1.0 \0"
+#define ODYSSEY_STR_INTERNAL_NAME	"subst\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"subst.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

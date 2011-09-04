@@ -1,0 +1,20 @@
+/* $Id: powercfg.rc 21982 2006-05-22 21:33:22Z janderwald $ */
+
+#include <windows.h>
+#include "resource.h"
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Power Management Control Panel\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"powercfg\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"powercfg.cpl\0"
+#include <odyssey/version.rc>
+
+IDI_AC        ICON "resources/ac.ico"
+IDI_ACDC      ICON "resources/acdc.ico"
+IDI_DC        ICON "resources/dc.ico"
+IDI_SCREEN    ICON "resources/screen.ico"
+IDI_HIBERNATE ICON "resources/hibernate.ico"
+
+#include "rsrc.rc"

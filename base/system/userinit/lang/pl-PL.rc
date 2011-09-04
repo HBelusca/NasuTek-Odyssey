@@ -1,0 +1,16 @@
+/*
+ *      translated by xrogers (http://rogers.cyberdusk.pl/)
+ *      xxrogers@users.sourceforge.net
+ *      https://sourceforge.net/projects/odysseypl
+ *      UTF-8 conversion by Caemyr (May, 2011)
+ */
+
+#include "resource.h"
+
+LANGUAGE LANG_POLISH, SUBLANG_DEFAULT
+STRINGTABLE DISCARDABLE
+BEGIN
+
+STRING_USERINIT_FAIL, "Nie powiodło się uruchomienie powłoki przez userinit!\n"
+
+END

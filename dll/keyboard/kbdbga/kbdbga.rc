@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Арда -Българска клавиатурна подредба 'чшертъ' за РеактОС\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbdbga\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbdbga.dll\0"
+#include <odyssey/version.rc>

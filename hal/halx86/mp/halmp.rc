@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"X86 Multiprocessor Hardware Abstraction Layer\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"halx86mp\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"halx86mp.dll\0"
+#include <odyssey/version.rc>

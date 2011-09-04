@@ -1,0 +1,19 @@
+#include <windows.h>
+#include <commctrl.h>
+
+#include "resource.h"
+
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey System Configuration Tool\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"msconfig\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"msconfig.exe\0"
+#include <odyssey/version.rc>
+
+IDI_APPICON   ICON "res/msconfig.ico"
+
+#include "rsrc.rc"
+
+

@@ -1,0 +1,10 @@
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+
+/* String Tables */
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_CAPTION  "Odyssey セットアップ"
+    IDS_TEXT     "この CD から直接 Odyssey をインストールすることはできません!\n\nOdyssey をインストールするには、コンピュータを一旦終了させ、この CD から起動させてください。"
+END
+
+/* EOF */

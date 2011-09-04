@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"VMWARE SVGA-II Miniport Device Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	    "vmx_svga\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"vmx_svga.sys\0"
+#include <odyssey/version.rc>

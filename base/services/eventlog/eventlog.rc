@@ -1,0 +1,4 @@
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Event logging service\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"EventLog\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"EventLog.exe\0"
+#include <odyssey/version.rc>

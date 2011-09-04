@@ -1,0 +1,25 @@
+/* $Id: odyssey.rc 34576 2008-07-18 19:35:03Z frik85 $ */
+
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Setup\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"odyssey\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"odyssey.exe\0"
+#include <odyssey/version.rc>
+
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+/* Icons */
+IDI_MAIN ICON "res/odyssey.ico"
+
+/* Bitmaps */
+IDB_WATERMARK BITMAP "res/watermark.bmp"
+IDB_HEADER    BITMAP "res/header.bmp"
+IDB_ROSLOGO   BITMAP "res/rosbitmap.bmp"
+
+/* Language-specific resources */
+#include "rsrc.rc"
+
+/* EOF */

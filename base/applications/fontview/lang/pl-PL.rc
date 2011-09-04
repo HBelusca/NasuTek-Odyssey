@@ -1,0 +1,21 @@
+/*
+ *         translated by Caemyr - Olaf Siejka (Feb, 2008)
+ *         Use Odyssey forum PM or IRC to contact me
+ *         http://www.odyssey.org
+ *         IRC: irc.freenode.net #odyssey-pl;
+ *         UTF-8 conversion by Caemyr (May, 2011)
+ */
+
+LANGUAGE LANG_POLISH, SUBLANG_DEFAULT
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_QUIT, "Wyjście"
+	IDS_PRINT, "Drukuj"
+	IDS_STRING, "Zażółć gęślą Jaźń żółwiątkiem. 1234567890. !@#$%^&*()_+=-/?"
+	IDS_ERROR, "Błąd"
+	IDS_ERROR_NOMEM, "Brakuje pamięci do ukończenia tej operacji."
+	IDS_ERROR_NOFONT, "Plik %1 nie jest poprawnym plikiem czcionki."
+	IDS_ERROR_NOCLASS, "Nie udało się zainicjować klasy window."
+	IDS_ERROR_BADCMD, "Brak pliku czcionki.\nSkładnia:\n  fontview.exe <plik czcionki>"
+END

@@ -1,0 +1,8 @@
+#include "resource.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey System Control Panel\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"control\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"control.exe\0"
+#include <odyssey/version.rc>
+
+IDI_MAINICON            ICON    DISCARDABLE     "resources/config.ico"

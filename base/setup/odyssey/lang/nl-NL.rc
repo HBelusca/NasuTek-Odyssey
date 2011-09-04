@@ -1,0 +1,10 @@
+LANGUAGE LANG_DUTCH, SUBLANG_NEUTRAL
+
+/* String Tables */
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_CAPTION  "Odyssey Setup"
+    IDS_TEXT     "U kunt Odyssey niet direct vanaf deze CD installeren!\n\nHerstart uw computer vanaf deze CD om Odyssey te installeren."
+END
+
+/* EOF */

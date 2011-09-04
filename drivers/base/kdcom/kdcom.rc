@@ -1,0 +1,12 @@
+/* $Id: bootvid.rc 24464 2006-10-09 04:00:34Z ion $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey KDBG COM Library\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kdcom\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kdcom.sys\0"
+#include <odyssey/version.rc>
+
+IDB_BOOTIMAGE   BITMAP  DISCARDABLE   "bootimage.bmp"
+IDB_BAR         BITMAP  DISCARDABLE   "bar.bmp"
+
+

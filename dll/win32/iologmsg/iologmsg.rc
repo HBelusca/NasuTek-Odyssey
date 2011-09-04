@@ -1,0 +1,9 @@
+#include <windows.h>
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"I/O Log Message Dll\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"iologmsg\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"iologmsg.dll\0"
+#include <odyssey/version.rc>
+
+#include "ntiologc.rc"

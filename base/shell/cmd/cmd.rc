@@ -1,0 +1,29 @@
+#include <windows.h>
+#include "resource.h"
+#include "cmdver.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Command Processor\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"cmd\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"cmd.exe\0"
+#define ODYSSEY_STR_ORIGINAL_COPYRIGHT	"Copyright (C) 1994-1998 Tim Norman and others\0"
+#define ODYSSEY_STR_LEGAL_COPYRIGHT     "Copyright (C) 1998-2006 Eric Kohl and others\0"
+
+#include <odyssey/version.rc>
+
+STRINGTABLE DISCARDABLE
+BEGIN
+  STRING_FREEDOS_DEV, "    Tim Norman        Matt Rains\n\
+    Evan Jeffrey      Steffen Kaiser\n\
+    Svante Frey       Oliver Mueller\n\
+    Aaron Kaufman     Marc Desrochers\n\
+    Rob Lake          John P Price\n\
+    Hans B Pufal\n"
+
+  STRING_ODYSSEY_DEV,  "    Eric Kohl         Emanuele Aliberti\n\
+    Paolo Pantaleo    Phillip Susi\n\
+    Sylvain Petreolle\n"
+END
+
+1 ICON DISCARDABLE res/terminal.ico
+
+#include "rsrc.rc"

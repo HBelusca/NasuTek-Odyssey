@@ -1,0 +1,7 @@
+/* $Id: blue.rc 21706 2006-04-22 14:01:25Z tretiakov $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"HAL Console Device Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"blue\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"blue.sys\0"
+#include <odyssey/version.rc>

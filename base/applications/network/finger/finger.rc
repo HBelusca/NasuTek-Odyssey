@@ -1,0 +1,6 @@
+/* $Id: finger.rc 21323 2006-03-17 15:43:34Z fireball $ */
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey TCP/IPv4 Win32 finger\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"finger\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"finger.exe\0"
+#include <odyssey/version.rc>

@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"PCMCIA Bus Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"pcmcia\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"pcmcia.sys\0"
+#include <odyssey/version.rc>

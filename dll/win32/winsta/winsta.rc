@@ -1,0 +1,4 @@
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey WinStation\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"winsta\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"winsta.dll\0"
+#include <odyssey/version.rc>

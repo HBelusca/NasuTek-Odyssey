@@ -1,0 +1,7 @@
+/* $Id: mswsock.rc 22406 2006-06-19 11:49:15Z gedmurphy $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Windows Sockets 2 DLL\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"mswsock\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"mswsock.dll\0"
+#include <odyssey/version.rc>

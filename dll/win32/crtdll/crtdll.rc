@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"C Runtime Library\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"crtdll\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"crtdll.dll\0"
+#include <odyssey/version.rc>

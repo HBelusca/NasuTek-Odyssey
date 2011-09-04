@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Arabic (102) AZERTY Keyboard Layout\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbda3\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbda3.dll\0"
+#include <odyssey/version.rc>

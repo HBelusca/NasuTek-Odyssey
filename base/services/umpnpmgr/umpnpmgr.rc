@@ -1,0 +1,4 @@
+#define ODYSSEY_STR_FILE_DESCRIPTION	"User-Mode Plug and Play manager\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"Umpnpmgr\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"Umpnpmgr.exe\0"
+#include <odyssey/version.rc>

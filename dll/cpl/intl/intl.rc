@@ -1,0 +1,14 @@
+/* $Id: intl.rc 32458 2008-02-23 17:48:50Z dchapyshev $ */
+
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION       "Odyssey Regional Settings Control Panel\0"
+#define ODYSSEY_STR_INTERNAL_NAME          "intl\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME      "intl.cpl\0"
+#include <odyssey/version.rc>
+
+IDC_CPLICON ICON "resources/applet.ico"
+
+#include "rsrc.rc"

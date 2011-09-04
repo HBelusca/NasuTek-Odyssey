@@ -1,0 +1,4 @@
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Spooler-Service\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"Spoolsv\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"Spoolsv.exe\0"
+#include <odyssey/version.rc>

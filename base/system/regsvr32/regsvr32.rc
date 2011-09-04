@@ -1,0 +1,9 @@
+/* $Id: regsvr32.rc 24947 2006-11-28 21:07:03Z janderwald $ */
+
+#include <windows.h>
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Register a COM component in the registry\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"regsvr32\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"regsvr32.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

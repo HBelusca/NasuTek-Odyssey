@@ -1,0 +1,7 @@
+/* $Id: win32k.rc 21292 2006-03-11 23:50:04Z jimtabor $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"W32 GDI KM subsystem\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"win32k\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"win32k.sys\0"
+#include <odyssey/version.rc>

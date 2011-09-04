@@ -1,0 +1,4 @@
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Win32 Get local host name\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"hostname\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"hostname.exe\0"
+#include <odyssey/version.rc>

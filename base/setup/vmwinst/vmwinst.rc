@@ -1,0 +1,9 @@
+#include <windows.h>
+#include "vmwinst.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey VMware(r) driver installation utility\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"vmwinst\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"vmwinst.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

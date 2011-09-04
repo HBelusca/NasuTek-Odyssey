@@ -1,0 +1,6 @@
+/* $Id: telnet.rc 21323 2006-03-17 15:43:34Z fireball $ */
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Console Telnet for Win32\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"telnet\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"telnet.exe\0"
+#include <odyssey/version.rc>

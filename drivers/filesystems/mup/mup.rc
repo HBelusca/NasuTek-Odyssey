@@ -1,0 +1,7 @@
+/* $Id: mup.rc 21385 2006-03-25 01:39:22Z peterw $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Multi UNC Provider\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"mup\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"mup.sys\0"
+#include <odyssey/version.rc>

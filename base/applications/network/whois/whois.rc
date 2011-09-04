@@ -1,0 +1,6 @@
+/* $Id: whois.rc 21323 2006-03-17 15:43:34Z fireball $ */
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey TCP/IPv4 Win32 Whois\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"whois\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"whois.exe\0"
+#include <odyssey/version.rc>

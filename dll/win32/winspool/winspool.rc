@@ -1,0 +1,7 @@
+/* $Id: winspool.rc 21300 2006-03-12 00:11:46Z jimtabor $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Windows printer spooler\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"winspool\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"winspool.drv\0"
+#include <odyssey/version.rc>

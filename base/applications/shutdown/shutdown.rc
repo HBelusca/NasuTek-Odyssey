@@ -1,0 +1,9 @@
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Shutdown Utility\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"shutdown\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"shutdown.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

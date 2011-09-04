@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Videoport Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"videoprt\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"videoprt.sys\0"
+#include <odyssey/version.rc>

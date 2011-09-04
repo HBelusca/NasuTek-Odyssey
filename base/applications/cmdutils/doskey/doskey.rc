@@ -1,0 +1,18 @@
+#include <windows.h>
+#include "doskey.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"W32 doskey command\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"doskey\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"doskey.exe\0"
+#include <odyssey/version.rc>
+
+// UTF-8
+#pragma code_page(65001)
+#include "lang/bg-BG.rc"
+#include "lang/de-DE.rc"
+#include "lang/en-US.rc"
+#include "lang/pl-PL.rc"
+#include "lang/ro-RO.rc"
+#include "lang/sv-SE.rc"
+#include "lang/uk-UA.rc"
+#include "lang/zh-CN.rc"

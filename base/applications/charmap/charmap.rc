@@ -1,0 +1,15 @@
+#include <windows.h>
+#include <commctrl.h>
+#include <richedit.h>
+#include "resource.h"
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+IDI_ICON ICON "res/charmap.ico"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION    "Odyssey Character Map\0"
+#define ODYSSEY_STR_INTERNAL_NAME       "charmap\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME   "charmap.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

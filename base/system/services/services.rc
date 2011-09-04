@@ -1,0 +1,6 @@
+/* $Id: services.rc 22189 2006-06-03 11:25:47Z gedmurphy $ */
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Service Control Manager\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"Services\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"Services.exe\0"
+#include <odyssey/version.rc>

@@ -1,0 +1,14 @@
+/*
+ * Odyssey rundll32
+ * Copyright (C) 2003-2004 ReactOS Team; (C) 2011 NasuTek Enterprises
+ * Copyright (C) 2006 Sumath Aowsakulsutthi (Thai translation)
+ */
+
+#include "resource.h"
+
+LANGUAGE LANG_THAI, SUBLANG_DEFAULT
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_DllNotLoaded, "การบรรจุค่าระบบเกิดผิดพลาด '%s'"
+    IDS_MissingEntry, "การเข้าหาตำแหน่งผิดพลาด: %s\n%s"
+END

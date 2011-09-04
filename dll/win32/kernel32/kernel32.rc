@@ -1,0 +1,19 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"W32 subsystem kernel\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kernel32\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kernel32.dll\0"
+#include <odyssey/version.rc>
+
+#include "windows.h"
+#include "errcodes.rc"
+
+#include "winnls/locale_rc.rc"
+
+#include "winnls/lang/en-US.rc"
+#include "winnls/lang/de-DE.rc"
+#include "winnls/lang/es-ES.rc"
+
+// UTF-8
+#pragma code_page(65001)
+#include "winnls/lang/ru-RU.rc"
+#include "winnls/lang/uk-UA.rc"

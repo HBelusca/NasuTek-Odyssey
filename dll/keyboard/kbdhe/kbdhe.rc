@@ -1,0 +1,6 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Greek Keyboard Layout\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbdhe\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbdhe.dll\0"
+#include <odyssey/version.rc>
+

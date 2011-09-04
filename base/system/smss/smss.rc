@@ -1,0 +1,6 @@
+/* $Id: smss.rc 22269 2006-06-07 13:06:40Z fireball $ */
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Session Manager\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"smss\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"smss.exe\0"
+#include <odyssey/version.rc>

@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"USBD Legacy Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"usbd\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"usbd.sys\0"
+#include <odyssey/version.rc>

@@ -1,0 +1,9 @@
+#include <windows.h>
+#include <commctrl.h>
+
+#define ODYSSEY_STR_FILE_DESCRIPTION   "Services control application\0"
+#define ODYSSEY_STR_INTERNAL_NAME      "sc\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME  "sc.exe\0"
+#include <odyssey/version.rc>
+
+//#include "En.rc"

@@ -1,0 +1,8 @@
+/* $Id: usetup.rc 24718 2006-11-10 21:00:24Z hpoussin $ */
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Setup\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"usetup\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"usetup.dll\0"
+#ifdef __ODYSSEY__
+#include <odyssey/version.rc>
+#endif

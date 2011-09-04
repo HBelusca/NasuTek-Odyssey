@@ -1,0 +1,15 @@
+#include <windows.h>
+#include <commctrl.h>
+#include "resource.h"
+
+
+#define ODYSSEY_STR_FILE_DESCRIPTION  "Odyssey Service Manager\0"
+#define ODYSSEY_STR_INTERNAL_NAME     "services\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME "servman.exe\0"
+//#include <odyssey/version.rc>
+
+1 24 DISCARDABLE "manifest.xml"
+
+#include "rsrc.rc"
+
+

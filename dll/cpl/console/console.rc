@@ -1,0 +1,19 @@
+/*
+ * PROJECT:         Odyssey Console Configuration DLL
+ * LICENSE:         GPL - See COPYING in the top level directory
+ * FILE:            dll/win32/console/console.rc
+ * PURPOSE:         main resource file
+ * PROGRAMMERS:     Johannes Anderwald (johannes.anderwald@student.tugraz.at)
+ */
+
+
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Control Panel Console Applet\0"
+#define ODYSSEY_STR_INTERNAL_NAME		"console\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"console.dll\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

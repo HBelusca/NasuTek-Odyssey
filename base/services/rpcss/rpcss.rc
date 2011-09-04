@@ -1,0 +1,6 @@
+/* $Id: rpcss.rc 21279 2006-03-10 06:09:58Z tretiakov $ */
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"RPC subsystem\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"RpcSs\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"RpcSs.exe\0"
+#include <odyssey/version.rc>

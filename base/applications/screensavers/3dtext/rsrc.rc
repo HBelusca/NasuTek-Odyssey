@@ -1,0 +1,34 @@
+#include <windows.h>
+#include <scrnsave.h>
+#include "resource.h"
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION    "OpenGL 3DText ScreenSaver\0"
+#define ODYSSEY_STR_INTERNAL_NAME       "3dtext\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME   "3dtext.scr\0"
+#include <odyssey/version.rc>
+
+// UTF-8
+#pragma code_page(65001)
+#include "lang/de-DE.rc"
+#include "lang/bg-BG.rc"
+#include "lang/el-GR.rc"
+#include "lang/en-US.rc"
+#include "lang/es-ES.rc"
+#include "lang/eu-ES.rc"
+#include "lang/fr-FR.rc"
+#include "lang/it-IT.rc"
+#include "lang/ja-JP.rc"
+#include "lang/ko-KR.rc"
+#include "lang/lt-LT.rc"
+#include "lang/no-NO.rc"
+#include "lang/pl-PL.rc"
+#include "lang/ro-RO.rc"
+#include "lang/ru-RU.rc"
+#include "lang/sk-SK.rc"
+#include "lang/sv-SE.rc"
+#include "lang/uk-UA.rc"
+#include "lang/zh-CN.rc"
+#include "lang/zh-TW.rc"

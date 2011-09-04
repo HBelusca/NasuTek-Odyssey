@@ -1,0 +1,6 @@
+/* $Id: route.rc 11816 2004-11-26 06:51:47Z arty $ */
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey TCP/IPv4 FTP Client\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"ftp\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"ftp.exe\0"
+#include <odyssey/version.rc>

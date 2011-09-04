@@ -1,0 +1,6 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Марица - Българска клавиатурна подредба по БДС 5237-78 за РеактОС\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbdbgm\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbdbgm.dll\0"
+#include <odyssey/version.rc>
+

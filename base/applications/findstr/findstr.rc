@@ -1,0 +1,6 @@
+#define ODYSSEY_STR_FILE_DESCRIPTION	"W32 findstr command\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"findstr\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"findstr.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

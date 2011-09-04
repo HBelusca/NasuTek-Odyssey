@@ -1,0 +1,8 @@
+#include <windows.h>
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Logon User Interface Host\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"LogonUI\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"LogonUI.exe\0"
+//#include <odyssey/version.rc>
+
+#include "rsrc.rc"

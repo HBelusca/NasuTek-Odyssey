@@ -1,0 +1,6 @@
+/* $Id: setup.rc 23076 2006-07-16 13:46:47Z fireball $ */
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Setup\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"setup\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"setup.exe\0"
+#include <odyssey/version.rc>

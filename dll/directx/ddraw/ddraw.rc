@@ -1,0 +1,18 @@
+/* $Id: ddraw.rc 33008 2008-04-17 19:15:43Z greatlrd $ */
+
+#include "resource.h"
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey/Win32 - DDraw\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"ddraw\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"ddraw.dll\0"
+
+#include <odyssey/reactx.h>
+
+#include <odyssey/version.rc>
+
+STRINGTABLE DISCARDABLE
+BEGIN
+STR_PRIMARY_DISPLAY,    "Primary Display Driver"
+END
+

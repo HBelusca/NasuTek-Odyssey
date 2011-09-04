@@ -1,0 +1,7 @@
+#include <windows.h>
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Formating a device with a filesystem \0"
+#define ODYSSEY_STR_INTERNAL_NAME	"format\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"format.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

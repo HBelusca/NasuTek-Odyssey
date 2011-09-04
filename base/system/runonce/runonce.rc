@@ -1,0 +1,12 @@
+#include "runonce.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION  "Odyssey Run Once Wrapper\0"
+#define ODYSSEY_STR_INTERNAL_NAME     "runonce\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME "runonce.exe\0"
+#include <odyssey/version.rc>
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+IDI_ICON ICON DISCARDABLE "res/icon.ico"
+
+#include "rsrc.rc"

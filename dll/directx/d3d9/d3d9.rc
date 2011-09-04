@@ -1,0 +1,10 @@
+/* $Id: d3d9.rc 33008 2008-04-17 19:15:43Z greatlrd $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Direct3D\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"d3d9\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"d3d9.dll\0"
+
+#include <odyssey/reactx.h>
+
+#include <odyssey/version.rc>

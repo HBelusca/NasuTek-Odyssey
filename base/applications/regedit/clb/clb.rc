@@ -1,0 +1,11 @@
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Column List Box\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"clb\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"clb.dll\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"
+

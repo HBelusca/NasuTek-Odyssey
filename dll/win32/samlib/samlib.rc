@@ -1,0 +1,7 @@
+/* $Id: samlib.rc 23553 2006-08-12 14:48:29Z gedmurphy $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Security Account Manager interface DLL\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"samlib\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"samlib.dll\0"
+#include <odyssey/version.rc>

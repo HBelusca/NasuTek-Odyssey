@@ -1,0 +1,9 @@
+/* $Id: userinit.rc 24117 2006-09-14 17:17:51Z greatlrd $ */
+#include <windows.h>
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Userinit Logon Application\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"userinit\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"userinit.dll\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

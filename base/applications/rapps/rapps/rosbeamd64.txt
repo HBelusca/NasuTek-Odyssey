@@ -1,0 +1,30 @@
+﻿; UTF-8
+
+[Section]
+Name = Odyssey Build Environment AMD64 Addon
+Version = 1.4b
+Licence = GPL
+Description = Allows you to build the Odyssey AMD64 Source. For more instructions see Odyssey wiki.
+Size = 15.4MB
+Category = 7
+URLSite = http://odyssey.org/wiki/Build_Environment/
+URLDownload = http://dreimer.bplaced.net/rosbe/RosBE64-1.4b.exe
+CDPath = none
+
+[Section.0405]
+Description = Dovoluje zkompilovat zdrojový kód systému Odyssey AMD64. Pro další detaily viz. Odyssey wiki.
+
+[Section.0407]
+Description = Erlaubt es Ihnen den Odyssey AMD64 Source Code zu kompilieren. Im Odyssey-Wiki finden Sie dazu nähere Anweisungen.
+
+[Section.040a]
+Description = Te permite compilar el código de Odyssey AMD64. Para más instrucciones consulta la wiki de Odyssey.
+
+[Section.040c]
+Description = Vous permet de compiler le code source de Odyssey pour AMD64. Pour plus d'instruction, reportez-vous au wiki Odyssey.
+
+[Section.0415]
+Description = Pozwala zbudować obraz płyty Odyssey AMD64 ze źródeł. Więcej informacji na Wiki Odyssey.
+
+[Section.0422]
+Description = Дозволяє зібрати Odyssey AMD64 з вихідних кодів. За детальною інформацією дивіться в Odyssey Вікі.

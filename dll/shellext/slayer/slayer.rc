@@ -1,0 +1,12 @@
+/* $Id: slayer.rc 31672 2008-01-08 16:13:01Z dreimer $ */
+
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Compatibility Layer Shell Extension\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"slayer\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"slayer.dll\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

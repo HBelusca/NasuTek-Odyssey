@@ -1,0 +1,6 @@
+; $Id: winsrv.def 21947 2006-05-20 10:49:56Z fireball $
+LIBRARY winsrv.dll
+EXPORTS
+ConServerDllInitialization@8
+UserServerDllInitialization@8
+; EOF

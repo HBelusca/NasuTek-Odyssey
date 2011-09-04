@@ -1,0 +1,8 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"FreeType font handling library\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"freetype\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"freetype.dll\0"
+#define ODYSSEY_STR_COMPANY_NAME	"Odyssey Development Team/FreeType Team\0"
+#define ODYSSEY_STR_LEGAL_COPYRIGHT	"Copyright 1998-2007 ReactOS Team; (C) 2011 NasuTek Enterprises\0"
+#define ODYSSEY_STR_ORIGINAL_COPYRIGHT	"Copyright 1996-2007 FreeType Team\0"
+#include <odyssey/version.rc>

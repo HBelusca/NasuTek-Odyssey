@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"WDM CODEC Class Device Driver 2.0\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"stream.sys\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"stream.sys\0"
+#include <odyssey/version.rc>

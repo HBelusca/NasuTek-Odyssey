@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"i8042 Port Device Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"i8042prt\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"i8042prt.sys\0"
+#include <odyssey/version.rc>

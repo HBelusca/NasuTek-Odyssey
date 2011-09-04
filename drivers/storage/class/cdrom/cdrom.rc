@@ -1,0 +1,7 @@
+/* $Id: cdrom.rc 26227 2007-04-01 16:29:16Z fireball $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"CD-ROM Class Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"cdrom\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"cdrom.sys\0"
+#include <odyssey/version.rc>

@@ -1,0 +1,4 @@
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey/Win32 console+user usermode server\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"winsrv\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"winsrv.exe\0"
+#include <odyssey/version.rc>

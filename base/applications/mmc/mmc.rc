@@ -1,0 +1,15 @@
+/* $Id: sndvol32.rc 23239 2006-07-23 09:59:30Z janderwald $ */
+
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Management Console\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"mmc\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"mmc.exe\0"
+#include <odyssey/version.rc>
+
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+IDI_MAINAPP ICON DISCARDABLE resources/mmc.ico
+
+#include "rsrc.rc"

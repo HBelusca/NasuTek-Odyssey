@@ -1,0 +1,9 @@
+LIBRARY			CSQ
+DESCRIPTION		"Odyssey Cancel-Safe Queue Library"
+EXPORTS
+  IoCsqInitialize
+  IoCsqInitializeEx
+	IoCsqInsertIrp
+	IoCsqInsertIrpEx
+  IoCsqRemoveIrp
+  IoCsqRemoveNextIrp

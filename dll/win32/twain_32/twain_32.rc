@@ -1,0 +1,7 @@
+/* $Id: twain_32.rc 21284 2006-03-10 16:55:37Z tretiakov $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"TWAIN support\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"twain_32\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"twain_32.dll\0"
+#include <odyssey/version.rc>

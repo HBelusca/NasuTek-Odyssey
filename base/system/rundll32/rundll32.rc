@@ -1,0 +1,9 @@
+/* $Id: rundll32.rc 24949 2006-11-28 21:20:25Z janderwald $ */
+
+#include <windows.h>
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Run a DLL as an App\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"rundll32\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"rundll32.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

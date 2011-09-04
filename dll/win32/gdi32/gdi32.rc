@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"GDI Client DLL\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"gdi32\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"gdi32.dll\0"
+#include <odyssey/version.rc>

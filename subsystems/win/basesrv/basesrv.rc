@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey/Win32 base usermode server\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"basesrv\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"basesrv.dll\0"
+#include <odyssey/version.rc>

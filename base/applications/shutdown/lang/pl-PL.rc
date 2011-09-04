@@ -1,0 +1,22 @@
+/*
+ *         translated by Caemyr - Olaf Siejka (Dec,2007)
+ *         Use Odyssey forum PM or IRC to contact me
+ *         http://www.odyssey.org
+ *         IRC: irc.freenode.net #odyssey-pl;
+ *         UTF-8 conversion by Caemyr (May, 2011) 
+ */
+
+LANGUAGE LANG_POLISH, SUBLANG_DEFAULT
+
+STRINGTABLE DISCARDABLE
+BEGIN
+
+IDS_USAGE, "Składnia: shutdown [-?] [-l | -s | -r] [-f]\n\n\
+  Bez parametrów albo z -?\tWyświetla niniejszą pomoc\n\
+  -l\t\t\tWylogowanie\n\
+  -s\t\t\tWyłączenie komputera\n\
+  -r\t\t\tRestart komputera\n\
+  -f\t\t\tZamknięcie wszystkich działających aplikacji, bez ostrzeżenia\n\
+    \t\t\tBez podania innego parametru, ta opcja domyślnie wyloguje \n\
+    \t\t\tobecnego użytkownika"
+END

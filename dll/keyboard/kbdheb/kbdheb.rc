@@ -1,0 +1,6 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Hebrew Keyboard Layout\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbdheb\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbdheb.dll\0"
+#include <odyssey/version.rc>
+

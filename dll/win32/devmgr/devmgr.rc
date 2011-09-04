@@ -1,0 +1,35 @@
+/* $Id: devmgr.rc 52407 2011-06-21 18:30:06Z akhaldi $ */
+
+#include <windows.h>
+#include "resource.h"
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Device Manager\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"devmgr\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"devmgr.dll\0"
+#include <odyssey/version.rc>
+
+IDI_DEVMGR ICON "resources/devmgr.ico"
+
+#include "lang/bg-BG.rc"
+#include "lang/cs-CZ.rc"
+#include "lang/de-DE.rc"
+#include "lang/el-GR.rc"
+#include "lang/en-US.rc"
+#include "lang/es-ES.rc"
+#include "lang/fr-FR.rc"
+#include "lang/hu-HU.rc"
+#include "lang/id-ID.rc"
+#include "lang/it-IT.rc"
+#include "lang/no-NO.rc"
+#include "lang/pt-BR.rc"
+#include "lang/sk-SK.rc"
+
+// UTF-8
+#pragma code_page(65001)
+#include "lang/pl-PL.rc"
+#include "lang/ro-RO.rc"
+#include "lang/ru-RU.rc"
+#include "lang/uk-UA.rc"

@@ -1,0 +1,7 @@
+/* $Id$ */
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Simple Telnet Service\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"telnetd\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"telnetd.exe\0"
+#define ODYSSEY_STR_ORIGINAL_COPYRIGHT  "fred.van.lieshout 'at' zonnet.nl\0"
+#include <odyssey/version.rc>

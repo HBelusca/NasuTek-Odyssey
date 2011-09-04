@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey US-Dvorak for left hand Keyboard Layout\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbdusl\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbdusl.dll\0"
+#include <odyssey/version.rc>

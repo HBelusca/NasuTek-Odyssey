@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Тунджа - Българска клавиатурна позвукова подредба 'явертъ' за РеактОС\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbdbgt\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbdbgt.dll\0"
+#include <odyssey/version.rc>

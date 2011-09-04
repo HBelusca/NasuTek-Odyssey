@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"FAT File System Management\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"ufat\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"ufat.dll\0"
+#include <odyssey/version.rc>

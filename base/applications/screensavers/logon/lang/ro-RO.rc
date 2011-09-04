@@ -1,0 +1,7 @@
+LANGUAGE LANG_ROMANIAN, SUBLANG_NEUTRAL
+
+STRINGTABLE DISCARDABLE
+BEGIN
+    IDS_DESCRIPTION "Ecran de veghe Siglă"
+    IDS_TEXT        "Acest ecran de veghe nu are opțiuni."
+END

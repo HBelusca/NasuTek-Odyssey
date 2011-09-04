@@ -1,0 +1,7 @@
+/* $Id: serenum.rc 21507 2006-04-07 15:34:51Z tretiakov $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Serial port enumerator\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"serenum\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"serenum.sys\0"
+#include <odyssey/version.rc>

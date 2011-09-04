@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Polish Programmer's Keyboard Layout\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbdpl1\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbdpl1.dll\0"
+#include <odyssey/version.rc>

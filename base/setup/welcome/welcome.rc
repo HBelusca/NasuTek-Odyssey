@@ -1,0 +1,13 @@
+/* $Id: welcome.rc 51374 2011-04-17 09:50:07Z mkupfer $ */
+
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey-Welcome\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"welcome\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"welcome.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"
+
+/* EOF */

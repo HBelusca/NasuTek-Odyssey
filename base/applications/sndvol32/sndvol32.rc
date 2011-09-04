@@ -1,0 +1,12 @@
+/* $Id: sndvol32.rc 24942 2006-11-28 20:26:23Z janderwald $ */
+
+#include <windows.h>
+#include "resources.h"
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Sound Volume Control\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"sndvol32\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"sndvol32.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"
+

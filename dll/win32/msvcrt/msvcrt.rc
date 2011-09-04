@@ -1,0 +1,8 @@
+#define ODYSSEY_STR_FILE_DESCRIPTION	"MSVCRT.DLL Compatibility Library\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"msvcrt\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"msvcrt.dll\0"
+
+#define ODYSSEY_FILEVERSION 7,0,2600,2180
+#define ODYSSEY_FILEVERSION_STR "7.0.2600"
+
+#include <odyssey/version.rc>

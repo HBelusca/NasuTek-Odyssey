@@ -1,0 +1,12 @@
+/* $Id: slayer.rc 24931 2006-11-28 19:35:42Z janderwald $ */
+
+#include <windows.h>
+#include "resource.h"
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Advanced display adapter properties\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"deskadp\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"deskadp.dll\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

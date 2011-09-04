@@ -1,0 +1,9 @@
+/* $Id: ntdll.rc 31399 2007-12-22 16:56:29Z fireball $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Layer DLL\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"ntdll\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"ntdll.dll\0"
+#include <odyssey/version.rc>
+
+#include "ntstatus.rc"

@@ -1,0 +1,7 @@
+/* $Id: wshirda.rc 21800 2006-05-05 15:09:57Z fireball $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Windows Sockets 2 IRDA Helper API\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"wshirda\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"wshirda.dll\0"
+#include <odyssey/version.rc>

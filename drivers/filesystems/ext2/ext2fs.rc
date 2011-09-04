@@ -1,0 +1,7 @@
+/* $Id: ext2fs.rc 12852 2005-01-06 13:58:04Z mf $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Linux ext2 IFS Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"ext2fs\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"ext2fs.sys\0"
+#include <odyssey/version.rc>

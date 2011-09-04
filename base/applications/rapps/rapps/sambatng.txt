@@ -1,0 +1,27 @@
+﻿; UTF-8
+
+[Section]
+Name = Samba TNG
+Version = 0.5-RC1
+Licence = GPL
+Description = This tool allows you to access your Windows shared folders/printers with Odyssey.
+Size = 2.1MB
+Category = 5
+URLSite = http://samba-tng.org/
+URLDownload = http://svn.odyssey.org/packages/samba-tng.exe
+CDPath = none
+
+[Section.0407]
+Description = Dieses Werkzeug erlaubt den Zugriff auf Windows' gemeinsame Verzeichnisse und Drucker aus Odyssey heraus.
+
+[Section.040a]
+Description = Esta utilidad le permite acceder a sus carpetas e impresoras compartidas en Windows con Odyssey.
+
+[Section.040c]
+Description = Cet outil vous permet d'accéder à vos répertoire/imprimantes partagés Windows avec Odyssey.
+
+[Section.0415]
+Description = Narzędzie pozwalające na dostęp z poziomu Odysseya do współdzielonych folderów/drukarek Windows.
+
+[Section.0422]
+Description = Цей інструмент дозволяє отримати доступ до спільних тек/принтерів Windows з Odysseyа.

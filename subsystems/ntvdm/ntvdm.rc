@@ -1,0 +1,9 @@
+/* $Id: ntvdm.rc 27460 2007-07-08 10:19:12Z cfinck $ */
+
+#include <windows.h>
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Virtual DOS Machine\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"ntvdm\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"ntvdm.exe\0"
+#include <odyssey/version.rc>
+
+#include "rsrc.rc"

@@ -1,0 +1,5 @@
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"LSA server DLL\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"lsasrv\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"lsasrv.dll\0"
+#include <odyssey/version.rc>

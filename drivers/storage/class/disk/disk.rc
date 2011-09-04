@@ -1,0 +1,7 @@
+/* $Id: disk.rc 21397 2006-03-27 07:38:43Z peterw $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Disk Class Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"disk\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"disk.sys\0"
+#include <odyssey/version.rc>

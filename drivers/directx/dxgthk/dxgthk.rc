@@ -1,0 +1,7 @@
+/* $Id: vbemp.rc 21844 2006-05-07 19:34:23Z ion $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"DirectX Graphics Driver Thunk\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"dxgthk\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"dxgthk\0"
+#include <odyssey/version.rc>

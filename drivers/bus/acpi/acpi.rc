@@ -1,0 +1,7 @@
+/* $Id: acpi.rc 21698 2006-04-22 05:55:17Z tretiakov $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey ACPI Driver\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"acpi\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"acpi.sys\0"
+#include <odyssey/version.rc>

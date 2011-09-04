@@ -1,0 +1,13 @@
+#include "resource.h"
+#include <windows.h>
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Keyboard Layout Switcher\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"kbswitch\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"kbswitch.exe\0"
+#include <odyssey/version.rc>
+
+IDI_MAIN ICON "res/kbswitch.ico"
+
+#include "rsrc.rc"

@@ -1,0 +1,7 @@
+/* $Id: winfax.rc 21356 2006-03-20 08:49:38Z tretiakov $ */
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey FAX API Support\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"winfax\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"winfax.dll\0"
+#include <odyssey/version.rc>

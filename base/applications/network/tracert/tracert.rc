@@ -1,0 +1,5 @@
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey TCP/IPv4 Win32 Traceroute\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"tracert\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"tracert.exe\0"
+#define ODYSSEY_STR_ORIGINAL_COPYRIGHT	"Ged Murphy (gedmurphy@gmail.com)\0"
+#include <odyssey/version.rc>

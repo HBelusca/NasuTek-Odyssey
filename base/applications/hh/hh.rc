@@ -1,0 +1,9 @@
+#include <windows.h>
+
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey HTML Help Executable\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"hh\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"hh.exe\0"
+#include <odyssey/version.rc>
+
+2 ICON DISCARDABLE hh.ico
+

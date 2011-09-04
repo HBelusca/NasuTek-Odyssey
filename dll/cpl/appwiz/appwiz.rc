@@ -1,0 +1,21 @@
+#include "resource.h"
+#include <windows.h>
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+#define ODYSSEY_VERSION_DLL
+#define ODYSSEY_STR_FILE_DESCRIPTION	"Odyssey Software Control Panel\0"
+#define ODYSSEY_STR_INTERNAL_NAME	"appwiz\0"
+#define ODYSSEY_STR_ORIGINAL_FILENAME	"appwiz.cpl\0"
+#include <odyssey/version.rc>
+
+IDI_CPLSYSTEM ICON "resources/applet.ico"
+IDI_APPICO ICON "resources/1501.ico"
+IDI_INSTICO ICON "resources/1502.ico"
+IDI_RECBINICO ICON "resources/1503.ico"
+IDI_DOWNLOADICO ICON "resources/1504.ico"
+IDI_APPINETICO ICON "resources/1505.ico"
+
+IDB_WATERMARK BITMAP "resources/watermark.bmp"
+
+#include "rsrc.rc"
