@@ -121,7 +121,7 @@ InbvDriverInitialize(IN PLOADER_PARAMETER_BLOCK LoaderBlock,
         VidResetDisplay(CustomLogo);
         
         /* Find bitmap resources in the kernel */
-        ResourceCount = min(IDB_CLUSTER_SERVER, Count);
+        ResourceCount = min(IDB_SERVER_HEADER, Count);
         for (i = 1; i <= Count; i++)
         {
             /* Do the lookup */
@@ -423,7 +423,7 @@ InbvUpdateProgressBar(IN ULONG Progress)
     {
         /* Compute fill count */
         BoundedProgress = (InbvProgressState.Floor / 100) + Progress;
-        FillCount = 121 * (InbvProgressState.Bias * BoundedProgress) / 1000000;
+        FillCount = 162 * (InbvProgressState.Bias * BoundedProgress) / 1000000;
 
         /* Acquire the lock */
         InbvAcquireLock();
@@ -432,8 +432,8 @@ InbvUpdateProgressBar(IN ULONG Progress)
         VidSolidColorFill(ProgressBarLeft,
                           ProgressBarTop,
                           ProgressBarLeft + FillCount,
-                          ProgressBarTop + 12,
-                          15);
+                          ProgressBarTop + 7,
+                          1);
 
         /* Release the lock */
         InbvReleaseLock();
@@ -578,9 +578,8 @@ NTAPI
 INIT_FUNCTION
 DisplayBootBitmap(IN BOOLEAN TextMode)
 {
-    PVOID Header, Band, Text, Screen;
+    PVOID Header, Screen;
     ROT_BAR_TYPE TempRotBarSelection = RB_UNSPECIFIED;
-    UCHAR Buffer[64];
     
     /* Check if the system thread has already been created */
     if (SysThreadCreated)
@@ -600,71 +599,47 @@ DisplayBootBitmap(IN BOOLEAN TextMode)
         {
             /* It's not, set workstation settings */
             InbvSetTextColor(15);
-            InbvSolidColorFill(0, 0, 639, 479, 7);
-            InbvSolidColorFill(0, 421, 639, 479, 1);
+            InbvSolidColorFill(0, 0, 639, 479, 0);
+            InbvSolidColorFill(0, 421, 639, 479, 4);
             
             /* Get resources */
             Header = InbvGetResourceAddress(IDB_LOGO_HEADER);
-            Band = InbvGetResourceAddress(IDB_LOGO_BAND);
         }
         else
         {
             /* Set server settings */
             InbvSetTextColor(14);
-            InbvSolidColorFill(0, 0, 639, 479, 6);
-            InbvSolidColorFill(0, 421, 639, 479, 1);
+            InbvSolidColorFill(0, 0, 639, 479, 0);
+            InbvSolidColorFill(0, 421, 639, 479, 4);
 
             /* Get resources */
             Header = InbvGetResourceAddress(IDB_SERVER_HEADER);
-            Band = InbvGetResourceAddress(IDB_SERVER_BAND);
         }
 
         /* Set the scrolling region */
-        InbvSetScrollRegion(32, 80, 631, 400);
+		InbvSetScrollRegion(32, 130, 631, 395);
 
         /* Make sure we have resources */
-        if ((Header) && (Band))
+        if (Header)
         {
             /* BitBlt them on the screen */
-            InbvBitBlt(Band, 0, 419);
             InbvBitBlt(Header, 0, 0);
         }
     }
     else
     {
         /* Is the boot driver installed? */
-        Text = NULL;
         if (!InbvBootDriverInstalled) return;
 
-        /* Load the standard boot screen */
-        Screen = InbvGetResourceAddress(IDB_BOOT_LOGO);
-        if (SharedUserData->NtProductType == NtProductWinNt)
-        {
-            /* Workstation product, display appropriate status bar color */
-            InbvGetResourceAddress(IDB_BAR_PRO);
-        }
-        else
-        {
-            /* Display correct branding based on server suite */
-            if (ExVerifySuite(StorageServer))
-            {
-                /* Storage Server Edition */
-                Text = InbvGetResourceAddress(IDB_STORAGE_SERVER);
-            }
-            else if (ExVerifySuite(ComputeServer))
-            {
-                /* Compute Cluster Edition */
-                Text = InbvGetResourceAddress(IDB_CLUSTER_SERVER);
-            }
-            else
-            {
-                /* Normal edition */
-                Text = InbvGetResourceAddress(IDB_SERVER_LOGO);
-            }
-            
-            /* Server product, display appropriate status bar color */
-            InbvGetResourceAddress(IDB_BAR_SERVER);
-        }
+		/* Load the standard boot screen */
+		if (SharedUserData->NtProductType == NtProductWinNt) 
+		{
+			Screen = InbvGetResourceAddress(IDB_BOOT_LOGO);
+		}
+		else
+		{
+			Screen = InbvGetResourceAddress(IDB_SERVER_BOOT_LOGO);
+		}
         
         /* Make sure we had a logo */
         if (Screen)
@@ -676,27 +651,9 @@ DisplayBootBitmap(IN BOOLEAN TextMode)
             InbvBitBlt(Screen, 0, 0);
 
             /* Set progress bar coordinates and display it */
-            InbvSetProgressBarCoordinates(257, 352);
-            
-            /* Check for non-workstation products */
-            if (SharedUserData->NtProductType != NtProductWinNt)
-            {
-                /* Overwrite part of the logo for a server product */
-                InbvScreenToBufferBlt(Buffer, 413, 237, 7, 7, 8);
-                InbvSolidColorFill(418, 230, 454, 256, 0);
-                InbvBufferToScreenBlt(Buffer, 413, 237, 7, 7, 8);
-                
-                /* In setup mode, you haven't selected a SKU yet */
-                if (ExpInTextModeSetup) Text = NULL;
-            }
-          }
+            InbvSetProgressBarCoordinates(274, 438);
+        }
           
-          /* Draw the SKU text if it exits */
-          if (Text) InbvBitBlt(Text, 180, 121);
-          
-          /* Draw the progress bar bit */
-//          if (Bar) InbvBitBlt(Bar, 0, 0);
-
           /* Set filter which will draw text display if needed */
           InbvInstallDisplayStringFilter(DisplayFilter);
     }

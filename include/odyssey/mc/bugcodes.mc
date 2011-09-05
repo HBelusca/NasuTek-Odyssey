@@ -19,7 +19,7 @@ Severity=Informational
 Facility=System
 SymbolicName=WINDOWS_NT_BANNER
 Language=English
-Odyssey (R) Kernel Version %hs (Build %u%hs)
+NasuTek Odyssey Version %hs (Build %u%hs)
 .
 
 MessageId=0x87

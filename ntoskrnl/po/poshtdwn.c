@@ -42,13 +42,15 @@ PopShutdownHandler(VOID)
         InbvEnableDisplayString(TRUE);
         InbvSetScrollRegion(0, 0, 639, 479);
 
+		/* TODO: Make this a full screen logo, for shutdown. */
+		
         /* Display shutdown logo and message */
         Logo1 = InbvGetResourceAddress(IDB_SHUTDOWN_LOGO);
-        Logo2 = InbvGetResourceAddress(IDB_LOGO);
+        //Logo2 = InbvGetResourceAddress(IDB_LOGO);
         if ((Logo1) && (Logo2))
         {
             InbvBitBlt(Logo1, 215, 352);
-            InbvBitBlt(Logo2, 217, 111);
+            //InbvBitBlt(Logo2, 217, 111);
         }
     }
     else

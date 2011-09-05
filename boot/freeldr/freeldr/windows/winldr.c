@@ -435,7 +435,7 @@ LoadModule(
 	PVOID BaseAdress;
 
 	UiDrawBackdrop();
-	sprintf(ProgressString, "Loading %s...", File);
+	sprintf(ProgressString, "Starting Odyssey...");
 	UiDrawProgressBarCenter(Percentage, 100, ProgressString);
 
 	strcpy(FullFileName, Path);
@@ -473,7 +473,7 @@ LoadAndBootWindows(PCSTR OperatingSystemName,
 	HasSection = IniOpenSection(OperatingSystemName, &SectionId);
 
 	UiDrawBackdrop();
-	UiDrawProgressBarCenter(1, 100, "Loading NT...");
+	UiDrawProgressBarCenter(1, 100, "Starting Odyssey...");
 
 	/* Read the system path is set in the .ini file */
 	if (!HasSection ||
@@ -539,7 +539,7 @@ LoadAndBootWindows(PCSTR OperatingSystemName,
 
 	/* Load Hive */
 	UiDrawBackdrop();
-	UiDrawProgressBarCenter(15, 100, "Loading system hive...");
+	UiDrawProgressBarCenter(15, 100, "Starting Odyssey...");
 	Status = WinLdrInitSystemHive(LoaderBlock, BootPath);
 	TRACE("SYSTEM hive loaded with status %d\n", Status);
 
@@ -609,7 +609,7 @@ LoadAndBootWindowsCommon(
 
 	/* Load boot drivers */
 	UiDrawBackdrop();
-	UiDrawProgressBarCenter(100, 100, "Loading boot drivers...");
+	UiDrawProgressBarCenter(100, 100, "Starting Odyssey...");
 	Status = WinLdrLoadBootDrivers(LoaderBlock, (PCHAR)BootPath);
 	TRACE("Boot drivers loaded with status %d\n", Status);
 

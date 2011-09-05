@@ -3059,35 +3059,6 @@ PrepareCopyPage(PINPUT_RECORD Ir)
 }
 
 
-VOID
-NTAPI
-SetupUpdateMemoryInfo(IN PCOPYCONTEXT CopyContext,
-                      IN BOOLEAN First)
-{
-    SYSTEM_PERFORMANCE_INFORMATION PerfInfo;
-
-    /* Get the memory information from the system */
-    NtQuerySystemInformation(SystemPerformanceInformation,
-                             &PerfInfo,
-                             sizeof(PerfInfo),
-                             NULL);
-
-    /* Check if this is initial setup */
-    if (First)
-    {
-        /* Set maximum limits to be total RAM pages */
-        ProgressSetStepCount(CopyContext->MemoryBars[0], PerfInfo.CommitLimit);
-        ProgressSetStepCount(CopyContext->MemoryBars[1], PerfInfo.CommitLimit);
-        ProgressSetStepCount(CopyContext->MemoryBars[2], PerfInfo.CommitLimit);
-    }
-
-    /* Set current values */
-    ProgressSetStep(CopyContext->MemoryBars[0], PerfInfo.PagedPoolPages + PerfInfo.NonPagedPoolPages);
-    ProgressSetStep(CopyContext->MemoryBars[1], PerfInfo.ResidentSystemCachePage);
-    ProgressSetStep(CopyContext->MemoryBars[2], PerfInfo.AvailablePages);
-}
-
-
 static UINT
 CALLBACK
 FileCopyCallback(PVOID Context,
@@ -3105,19 +3076,16 @@ FileCopyCallback(PVOID Context,
             CopyContext->TotalOperations = (ULONG)Param2;
             ProgressSetStepCount(CopyContext->ProgressBar,
                                  CopyContext->TotalOperations);
-            SetupUpdateMemoryInfo(CopyContext, TRUE);
             break;
 
         case SPFILENOTIFY_STARTCOPY:
             /* Display copy message */
             CONSOLE_SetStatusText(MUIGetString(STRING_COPYING), (PWSTR)Param1);
-            SetupUpdateMemoryInfo(CopyContext, FALSE);
             break;
 
         case SPFILENOTIFY_ENDCOPY:
             CopyContext->CompletedOperations++;
             ProgressNextStep(CopyContext->ProgressBar);
-            SetupUpdateMemoryInfo(CopyContext, FALSE);
             break;
     }
 
@@ -3153,36 +3121,6 @@ FileCopyPage(PINPUT_RECORD Ir)
     // fit memory bars to screen width, distribute them uniform
     mem_bar_width = (xScreen - 26) / 5;
     mem_bar_width -= mem_bar_width % 2;  // make even
-    /* ATTENTION: The following progress bars are debug stuff, which should not be translated!! */
-    /* Create the paged pool progress bar */
-    CopyContext.MemoryBars[0] = CreateProgressBar(13,
-                                                  40,
-                                                  13 + mem_bar_width,
-                                                  43,
-                                                  13,
-                                                  44,
-                                                  FALSE,
-                                                  "Kernel Pool");
-
-    /* Create the non paged pool progress bar */
-    CopyContext.MemoryBars[1] = CreateProgressBar((xScreen / 2)- (mem_bar_width / 2),
-                                                  40,
-                                                  (xScreen / 2) + (mem_bar_width / 2),
-                                                  43,
-                                                  (xScreen / 2)- (mem_bar_width / 2),
-                                                  44,
-                                                  FALSE,
-                                                  "Kernel Cache");
-
-    /* Create the global memory progress bar */
-    CopyContext.MemoryBars[2] = CreateProgressBar(xScreen - 13 - mem_bar_width,
-                                                  40,
-                                                  xScreen - 13,
-                                                  43,
-                                                  xScreen - 13 - mem_bar_width,
-                                                  44,
-                                                  FALSE,
-                                                  "Free Memory");
 
     /* Do the file copying */
     SetupCommitFileQueueW(NULL,
@@ -3193,9 +3131,6 @@ FileCopyPage(PINPUT_RECORD Ir)
     /* If we get here, we're done, so cleanup the queue and progress bar */
     SetupCloseFileQueue(SetupFileQueue);
     DestroyProgressBar(CopyContext.ProgressBar);
-    DestroyProgressBar(CopyContext.MemoryBars[0]);
-    DestroyProgressBar(CopyContext.MemoryBars[1]);
-    DestroyProgressBar(CopyContext.MemoryBars[2]);
 
     /* Go display the next page */
     return REGISTRY_PAGE;
