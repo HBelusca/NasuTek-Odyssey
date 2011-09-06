@@ -26,6 +26,9 @@ Abstract:
 #define _WIN32_WINNT_LONGHORN               0x0600
 #define _WIN32_WINNT_WIN7                   0x0601
 
+/* _WIN32_ODYSSEY */
+#define _WIN32_ODYSSEY_2012                 0x0503
+
 /* _WIN32_IE */
 #define _WIN32_IE_IE20                      0x0200
 #define _WIN32_IE_IE30                      0x0300

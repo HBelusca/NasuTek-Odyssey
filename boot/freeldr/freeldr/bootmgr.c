@@ -250,7 +250,7 @@ VOID RunLoader(VOID)
 		}
 		else if (_stricmp(BootType, "Windows2003") == 0)
 		{
-			LoadAndBootWindows(SectionName, SettingValue, _WIN32_WINNT_WS03);
+			LoadAndBootWindows(SectionName, SettingValue, _WIN32_ODYSSEY_2012);
 		}
 		else if (_stricmp(BootType, "Linux") == 0)
 		{

@@ -242,7 +242,7 @@ VOID LoadOdysseySetup(VOID)
     SetupLdrScanBootDrivers(LoaderBlock, InfHandle, BootPath);
 
 
-    LoadAndBootWindowsCommon(_WIN32_WINNT_WS03,
+    LoadAndBootWindowsCommon(_WIN32_ODYSSEY_2012,
                              LoaderBlock,
                              BootOptions,
                              BootPath,

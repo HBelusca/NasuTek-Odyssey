@@ -70,7 +70,8 @@ VOID MiniTuiDrawProgressBar(ULONG Left, ULONG Top, ULONG Right, ULONG Bottom, UL
 	// Draw the percent complete
 	for (i=0; i<(Position*ProgressBarWidth)/Range; i++)
 	{
-		TuiDrawText(Left+2+i, Top+2, "\xDB", ATTR(UiTextColor, UiMenuBgColor));
+		//TuiDrawText(Left+2+i, Top+2, "\xDB", ATTR(UiTextColor, UiMenuBgColor));
+		TuiDrawText(Left+2+i, Top+2, "\xDB", ATTR(COLOR_WHITE, COLOR_GRAY));
 	}
 
 	TuiUpdateDateTime();

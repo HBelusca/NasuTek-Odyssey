@@ -16,16 +16,22 @@
 //
 // Windows NT Build 3790.1830
 //
-#define VER_PRODUCTBUILD                    3790
-#define VER_PRODUCTBUILD_QFE                1830
+#define VER_PRODUCTBUILD                    2000
+#define VER_PRODUCTBUILD_QFE                0
 
 //
 // Windows NT Version 5.2
 //
 #define VER_PRODUCTMAJORVERSION             5
-#define VER_PRODUCTMINORVERSION             2
-#define VER_PRODUCTVERSION_W                (0x0502)
-#define VER_PRODUCTVERSION_DW               (0x05020000 | VER_PRODUCTBUILD)
+#define VER_PRODUCTMINORVERSION             3
+#define VER_PRODUCTVERSION_W                (0x0503)
+#define VER_PRODUCTVERSION_DW               (0x05030000 | VER_PRODUCTBUILD)
+
+//
+// Service Pack
+//
+#define VER_SRVPACK                         0x000
+#define VER_SRVPACK_BUILD                   0
 
 //
 // Not a beta

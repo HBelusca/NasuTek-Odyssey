@@ -45,100 +45,42 @@ int count_wide_string( const wchar_t *str )
 	return i;
 }
 
-long
-GetRev(char *Revision, size_t length)
+char *
+GetRev(char *branch)
 {
-	long revno = 0;
-	char *p;
+	char *revno;
 
 	FILE *fp = NULL;
-	fp = fopen(".svn/entries", "r");
+	fp = fopen(".git/HEAD", "r");
 	if (fp != NULL)
 	{
-		if (fgets(Revision, length, fp) != NULL)
-		{
-			/* If the first character of the file is not a digit,
-			   then it is probably in XML format. */
-			if (isdigit(Revision[0]))
-			{
-				while (fgets(Revision, length, fp) != NULL)
-				{
-					revno = strtol(Revision, &p, 10);
-					if (revno != 0)
-					{
-						*p = '\0';
-						fclose(fp);
-						return revno;
-					}
-				}
-			}
-		}
+		// Read GIT Head File
+		long len;
+		char *buff;
+		fseek(fp, 0, SEEK_END);
+		len = ftell(fp);
+		fseek(fp, 0, SEEK_SET);
+		buff = (char *)malloc(len);
+		fread(buff, len, 1, fp);
 		fclose(fp);
-	}
 
-	try
-	{
-		XMLElement *head;
+		// Now get the clean branch name
+		char branSta[] = strtok(buff, "/");
+		branch = branSta[2];
 
-		try
+		// Now get the actual revision key
+		FILE *revfp = NULL;
+		revfp = fopen(strcat(".git/refs/heads/", branch), "r");
+		if (revfp != NULL)
 		{
-			head = XMLLoadFile(".svn/entries");
-		}
-		catch(XMLFileNotFoundException)
-		{
-			head = XMLLoadFile("_svn/entries");
-		}
-		XMLElement *entries = head->subElements[0];
-		for (size_t i = 0; i < entries->subElements.size(); i++)
-		{
-			XMLElement *entry = entries->subElements[i];
-			if ("entry" == entry->name)
-			{
-				bool GotName = false;
-				bool GotKind = false;
-				bool GotRevision = false;
-				for (size_t j = 0; j < entry->attributes.size(); j++)
-				{
-					XMLAttribute *Attribute = entry->attributes[j];
-					if ("name" == Attribute->name && "" == Attribute->value)
-					{
-						GotName = true;
-					}
-					if ("kind" == Attribute->name && "dir" == Attribute->value)
-					{
-						GotKind = true;
-					}
-					if ("revision" == Attribute->name)
-					{
-						if (length <= Attribute->value.length() + 1)
-						{
-							strcpy(Revision, "revtoobig");
-						}
-						else
-						{
-							strcpy(Revision, Attribute->value.c_str());
-							revno = strtol(Revision, NULL, 10);
-						}
-						GotRevision = true;
-					}
-					if (GotName && GotKind && GotRevision)
-					{
-						delete head;
-						return revno;
-					}
-				}
-			}
+			fread(revno, 12, 1, revfp);
+			fclose(revfp);
 		}
 
-		delete head;
+		return revno;
+	} else {
+		return "none";
 	}
-	catch(...)
-	{
-		;
-	}
-
-	strcpy(Revision, "UNKNOWN");
-	return revno;
 }
 
 void
@@ -292,8 +234,9 @@ main (int argc, char * argv [])
 	int quiet = FALSE;
 
 	int build = 0;
-	long revno;
-	char buildstr[64], revision[10];
+	char *revno;
+	char *branch;
+	char buildstr[64];
 
 	time_t t1 = 0;
 	struct tm * t1_tm = NULL;
@@ -390,7 +333,7 @@ main (int argc, char * argv [])
 		build_tag = new_build_tag;
 	}
 
-	revno = GetRev(revision, sizeof(revision));
+	revno = GetRev(branch);
 	sprintf(buildstr, "%d-r%s", build, revision);
 
 	if (! quiet)
