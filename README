@@ -1,29 +1,97 @@
-========================
-Odyssey Version 0.3.x
-Updated Dec 16, 2006
-========================
+*************************************************************************************
+*                      Readme for NasuTek Odyssey Operating System                  *
+*                            Updated September 05, 2011                             *
+*                      For the 5.3 Release of Odyssey Professional                  *
+*                                and Odyssey Server                                 *
+*************************************************************************************
 
+===================
 1. What is Odyssey?
+===================
+     Odyssey is an open source operating system and kernel based off ReactOS. The idea of
+Odyssey is to create a easy to use operating system thats secure, based off of ideas from 
+Windows NT, powerful, and has support for Linux based binaries (Debian Compatable).
 
-   Odyssey is an Open Source effort to develop a quality operating system
-that is compatible with Windows NT applications and drivers.
+     The reason this is a fork and not a contributation to ReactOS is the ideas for
+Odyssey will be vastly diffrent. One is Odyssey isn't striving for complete Windows
+Compatabilty. We want to use the ideas off the NT Kernel but want to change the way API's
+are written, to make it easier for developers to make Odyssey applications and not worry
+about maintaining a compatability layer. One of the good things about using the NT 
+Architecture is we will support Linux binaries to expand Odyssey's Software Library. This
+subsystem will be called the Odyssey Debian Subsystem or ODS. ODS will allow most Debian
+software to run on Odyssey without modification as ODS provides a Linux Subsystem kernel.
+ODS will have its shortcomings like for example it wont support Linux drivers. The ideas
+of ODS are in the planning stages.
 
-   The Odyssey project, although currently focused on Windows XP/2003
-drivers compatibility, is always keeping an eye toward compatibility with
-older version of Windows NT family ( NT 4.0, 2000 (NT 5.0)) and new
-Windows NT releases (Vista, etc). Applications (Win32 API) compatibility
-focus is Windows XP.
-
-More information is available at http://www.odyssey.org/.
-
+===================
 2. Building Odyssey
+===================
 
-See the INSTALL file for more details.
+2.1. Build environment
+----------------------
+To build the system you need either mingw32 installed on Windows or a mingw32 cross 
+compiler running on unix. You may obtain MinGW binaries that build Odyssey from 
+http://odyssey.nasutek.com/.
 
-3. More information
+2.2. Building Odyssey
+---------------------
 
-See the media\doc subdirectory for some sparse notes.
+2.2.1 Building the binaries
+***************************
+To build Odyssey run 'make' (without the quotes) if you are building on Linux or 
+'mingw32-make' if you are building on Windows (or Odyssey) from the top directory. If you 
+are using RosBE, follow on-screen instructions.
 
-4. Who is responsible
+2.2.2 Building a bootable CD image
+**********************************
+To build a bootable CD image run 'make bootcd' (without the quotes) if you are building on
+Linux or 'mingw32-make bootcd' if you are building on Windows (or Odyssey) from the top 
+directory. This will create a CD image with a filename, bootcd.iso, in the top directory.
 
-See the CREDITS file.
+2.3. Installation
+-----------------
+Odyssey can only be installed on a machine that has a FAT16 or FAT32 partition as the active
+(bootable) partition. The partition on which Odyssey is to be installed (which may or may not
+be the bootable partition) must also be formatted as FAT16 or FAT32. Odyssey Setup can format
+the partitions if needed.
+
+Odyssey can be installed from the source distribution or from the bootable CD distribution.
+The two ways to install Odyssey are explained below.
+
+2.3.1 Installation from sources
+*******************************
+If you don't have an existing Odyssey installation you want to upgrade, then build a bootable 
+CD as described above. Burn the CD image, boot from it, and follow the instructions to install
+Odyssey.
+
+If you have an existing Odyssey installation you want to upgrade, then to install Odyssey after
+building it, type 'make install' or 'mingw32-make install'. This will create the directory
+'odyssey' in the top directory. Copy the contents of this directory over the existing
+installation.
+
+If you don't want to copy the files manually every time you run a 'make install' or
+'mingw32-make install', then you can specify the directory where the files are to be copied to
+during installation.
+
+Set the ROS_INSTALL environment variable. If you are on Windows this could be done by:
+
+  set ROS_INSTALL=c:\odyssey
+
+If you are on Linux this could be done by:
+
+  export ROS_INSTALL=/mnt/windows/odyssey
+
+Now run 'make install' or 'mingw32-make install' to install the files to the new location.
+
+2.3.2 Installation from bootable CD distribution
+************************************************
+To install Odyssey from the bootable CD distribution, extract the archive contents. Then burn 
+the CD image, boot from it, and follow instructions.
+
+=======
+3. Help
+=======
+If you run into problems or have suggestions for making Odyssey better, please visit the address
+below. Mailing lists are available for a variety of topics, bugs should be submitted to Mantis.
+
+http://odyssey.nasutek.com/

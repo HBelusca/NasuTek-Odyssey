@@ -858,8 +858,8 @@ static void MDITile( HWND client, MDICLIENTINFO *ci, WPARAM wParam )
             for (r = 1; r <= rows && *pWnd; r++, i++)
             {
                 LONG posOptions = SWP_DRAWFRAME | SWP_NOACTIVATE | SWP_NOZORDER;
-                LONG style = GetWindowLongW(win_array[i], GWL_STYLE);  
-                if (!(style & WS_SIZEBOX)) posOptions |= SWP_NOSIZE; 
+                LONG style = GetWindowLongW(win_array[i], GWL_STYLE);
+                if (!(style & WS_SIZEBOX)) posOptions |= SWP_NOSIZE;
 
                 SetWindowPos(*pWnd, 0, x, y, xsize, ysize, posOptions);
                 y += ysize;
@@ -1084,9 +1084,9 @@ static void MDI_UpdateFrameText( HWND frame, HWND hClient, BOOL repaint, LPCWSTR
 
     DefWindowProcW( frame, WM_SETTEXT, 0, (LPARAM)lpBuffer );
 
-    if (repaint)  
-        SetWindowPos( frame, 0,0,0,0,0, SWP_FRAMECHANGED |  
-                      SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE | SWP_NOZORDER ); 
+    if (repaint)
+        SetWindowPos( frame, 0,0,0,0,0, SWP_FRAMECHANGED |
+                      SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE | SWP_NOZORDER );
 }
 
 
@@ -1594,9 +1594,9 @@ LRESULT WINAPI DefMDIChildProcW( HWND hwnd, UINT message,
         break;
 
     case WM_SHOWWINDOW:
-#ifndef __ODYSSEY__
+//#ifndef __ODYSSEY__
     case WM_SETVISIBLE:
-#endif
+//#endif
         if (ci->hwndChildMaximized) ci->mdiFlags &= ~MDIF_NEEDUPDATE;
         else MDI_PostUpdate(client, ci, SB_BOTH+1);
         break;
@@ -1994,7 +1994,7 @@ TileWindows (HWND hwndParent, UINT wFlags, LPCRECT lpRect,
  *              TileChildWindows (USER32.@)
  */
 WORD WINAPI TileChildWindows( HWND parent, UINT flags )
-{  
+{
     return TileWindows( parent, flags, NULL, 0, NULL );
 }
 
