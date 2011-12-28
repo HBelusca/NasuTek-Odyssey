@@ -330,14 +330,14 @@ TuiDrawMenuBox(PUI_MENU_INFO MenuInfo)
             //
             // Draw the separator line
             //
-            UiDrawText(MenuInfo->Left,
-                       MenuInfo->Top + i + 1,
-                       "\xC7",
-                       ATTR(UiMenuFgColor, UiMenuBgColor));
-            UiDrawText(MenuInfo->Right,
-                       MenuInfo->Top + i + 1,
-                       "\xB6",
-                       ATTR(UiMenuFgColor, UiMenuBgColor));
+            //UiDrawText(MenuInfo->Left,
+            //           MenuInfo->Top + i + 1,
+            //           " ",
+            //           ATTR(UiMenuFgColor, UiMenuBgColor));
+            //UiDrawText(MenuInfo->Right,
+	    //          MenuInfo->Top + i + 1,
+	    //          "\xB6",
+	    //          ATTR(UiMenuFgColor, UiMenuBgColor));
         }
     }
 }

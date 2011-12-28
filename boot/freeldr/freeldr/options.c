@@ -35,6 +35,7 @@ PCSTR	OptionsMenuList[] =
 
 	"SEPARATOR",
 
+	"Boot Odyssey Normally",
 #ifdef HAS_OPTION_MENU_CUSTOM_BOOT
 	"Custom Boot",
 #endif
@@ -59,11 +60,12 @@ enum OptionMenuItems
 
 	SEPARATOR2 = 9,
 
+	BOOT_NORMALLY = 10,
 #ifdef HAS_OPTION_MENU_CUSTOM_BOOT
-	CUSTOM_BOOT = 10,
+	CUSTOM_BOOT = 11,
 #endif
 #ifdef HAS_OPTION_MENU_REBOOT
-	REBOOT = 11,
+	REBOOT = 12,
 #endif
 };
 
@@ -122,6 +124,8 @@ VOID DoOptionsMenu(VOID)
 	case DEBUGGING_MODE:
 		DebuggingMode = TRUE;
 		break;
+	case BOOT_NORMALLY:
+	        break;
 	//case SEPARATOR2:
 	//	break;
 #ifdef HAS_OPTION_MENU_CUSTOM_BOOT

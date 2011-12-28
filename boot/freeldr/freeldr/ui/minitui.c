@@ -37,8 +37,9 @@ VOID MiniTuiDrawStatusText(PCSTR StatusText)
 VOID MiniTuiDrawProgressBarCenter(ULONG Position, ULONG Range, PCHAR ProgressText)
 {
 	ULONG		Left, Top, Right, Bottom;
-	ULONG		Width = 50; // Allow for 50 "bars"
+	ULONG		Width = 80; // Allow for 50 "bars"
 	ULONG		Height = 2;
+	ULONG           i;
 
 	Width = 80;
 	Left = 0;
@@ -46,13 +47,41 @@ VOID MiniTuiDrawProgressBarCenter(ULONG Position, ULONG Range, PCHAR ProgressTex
 	Top = UiScreenHeight - Height - 4;
 	Bottom = Top + Height + 1;
 
+	for (i=0; i<Width; i++)
+	{
+		TuiDrawText(Left+i, Top+3, "\xDD", ATTR(UiTextColor, UiMenuBgColor));
+		//TuiDrawText(Left+2+i, Top+2, "\xDB", ATTR(COLOR_WHITE, COLOR_GRAY));
+	}
+
 	MiniTuiDrawProgressBar(Left, Top, Right, Bottom, Position, Range, ProgressText);
+}
+VOID MiniTuiF8Notice()
+{
+	ULONG		Left, Top, Right, Bottom;
+	ULONG		Width = 80; // Allow for 50 "bars"
+	ULONG		Height = 2;
+	ULONG           i;
+
+	Width = 80;
+	Left = 0;
+	Right = Left + Width;
+	Top = UiScreenHeight - Height - 4;
+	Bottom = Top + Height + 1;
+
+	for (i=0; i<Width; i++)
+	{
+		TuiDrawText(Left+i, Top+3, "\xDD", ATTR(UiTextColor, UiMenuBgColor));
+	}
+
+	TuiDrawText(Left, Bottom+2, "For troubleshooting and advanced startup options for Odyssey, press F8.", ATTR(UiTextColor, UiMenuBgColor));
+	
+	MiniTuiDrawProgressBar(Left, Top, Right, Bottom, 0, 100, "Starting Odyssey...");
 }
 
 VOID MiniTuiDrawProgressBar(ULONG Left, ULONG Top, ULONG Right, ULONG Bottom, ULONG Position, ULONG Range, PCHAR ProgressText)
 {
 	ULONG		i;
-	ULONG		ProgressBarWidth = (Right - Left) - 4;
+	ULONG		ProgressBarWidth = 80;
 
 	// First make sure the progress bar text fits
 	UiTruncateStringEllipsis(ProgressText, ProgressBarWidth - 4);
@@ -65,13 +94,14 @@ VOID MiniTuiDrawProgressBar(ULONG Left, ULONG Top, ULONG Right, ULONG Bottom, UL
 	//
 	//  Draw the "Loading..." text
 	//
-	TuiDrawCenteredText(Left + 2, Top + 1, Right - 2, Top + 1, ProgressText, ATTR(7, 0));
+	TuiDrawCenteredText(Left, Top+3, Right, Top+3, ProgressText, ATTR(7, 0));
 
 	// Draw the percent complete
+
 	for (i=0; i<(Position*ProgressBarWidth)/Range; i++)
 	{
-		//TuiDrawText(Left+2+i, Top+2, "\xDB", ATTR(UiTextColor, UiMenuBgColor));
-		TuiDrawText(Left+2+i, Top+2, "\xDB", ATTR(COLOR_WHITE, COLOR_GRAY));
+	  TuiDrawText(Left+i, Top+3, "\xDB", ATTR(UiTextColor, UiMenuBgColor));
+	  //TuiDrawText(Left+2+i, Top+2, "\xDD", ATTR(COLOR_WHITE, COLOR_GRAY));
 	}
 
 	TuiUpdateDateTime();
@@ -154,5 +184,6 @@ const UIVTBL MiniTuiVtbl =
 	TuiFadeOut,
 	TuiDisplayMenu,
 	MiniTuiDrawMenu,
+	MiniTuiF8Notice,
 };
 #endif

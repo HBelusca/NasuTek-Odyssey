@@ -165,6 +165,7 @@ VOID LoadOdysseySetup(VOID)
         "\\MIPS\\",
 #endif
         "\\odyssey\\",
+	"\\$odyssey_inst$\\",
         NULL
     };
 

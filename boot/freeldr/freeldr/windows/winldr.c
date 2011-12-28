@@ -435,8 +435,9 @@ LoadModule(
 	PVOID BaseAdress;
 
 	UiDrawBackdrop();
-	sprintf(ProgressString, "Starting Odyssey...");
-	UiDrawProgressBarCenter(Percentage, 100, ProgressString);
+	sprintf(ProgressString, "Loading %s...", File);
+	UiDrawStatusText(ProgressString);
+	UiDrawProgressBarCenter(Percentage, 100, "Starting Odyssey...");
 
 	strcpy(FullFileName, Path);
 	strcat(FullFileName, "SYSTEM32\\");

@@ -87,10 +87,10 @@
 #include <fs/pxe.h>
 
 /* ui support */
-#include <ui/gui.h>
 #include <ui/minitui.h>
 #include <ui/noui.h>
 #include <ui/tui.h>
+#include <ui/setupui.h>
 
 /* arch specific includes */
 #if defined(_M_IX86) || defined(_M_AMD64)

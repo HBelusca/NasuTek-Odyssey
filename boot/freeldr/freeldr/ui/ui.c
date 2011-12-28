@@ -115,9 +115,7 @@ BOOLEAN UiInitialize(BOOLEAN ShowGui)
 	MachVideoGetDisplaySize(&UiScreenWidth, &UiScreenHeight, &Depth);
 
 	if (VideoTextMode == UiDisplayMode)
-		UiVtbl = UiMinimal ? MiniTuiVtbl : TuiVtbl;
-	else
-		UiVtbl = GuiVtbl;
+		UiVtbl = MiniTuiVtbl;
 
 	if (!UiVtbl.Initialize())
 	{
@@ -235,7 +233,7 @@ BOOLEAN SetupUiInitialize(VOID)
 	MachVideoSetDisplayMode(DisplayModeText, TRUE);
 	MachVideoGetDisplaySize(&UiScreenWidth, &UiScreenHeight, &Depth);
 
-	UiVtbl = TuiVtbl;
+	UiVtbl = SetupUiVtbl;
 	UiVtbl.Initialize();
 
 	// Draw the backdrop and fade it in if special effects are enabled

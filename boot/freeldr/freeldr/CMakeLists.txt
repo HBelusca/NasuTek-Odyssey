@@ -59,12 +59,13 @@ list(APPEND FREELDR_COMMON_SOURCE
     odyssey/binhive.c
 
     ui/directui.c
-    ui/gui.c
     ui/minitui.c
     ui/noui.c
+    ui/ui.c
     ui/tui.c
     ui/tuimenu.c
-    ui/ui.c
+	ui/setupui.c
+
     video/fade.c
     video/palette.c
     video/video.c

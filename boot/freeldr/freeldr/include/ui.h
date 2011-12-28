@@ -125,6 +125,7 @@ typedef struct tagUIVTBL
 
 	BOOLEAN (*DisplayMenu)(PCSTR MenuItemList[], ULONG MenuItemCount, ULONG DefaultMenuItem, LONG MenuTimeOut, ULONG* SelectedMenuItem, BOOLEAN CanEscape, UiMenuKeyPressFilterCallback KeyPressFilter);
 	VOID (*DrawMenu)(PUI_MENU_INFO MenuInfo);
+	VOID (*F8Notice)(VOID);
 } UIVTBL, *PUIVTBL;
 
 VOID UiInit(const char *CmdLine);

@@ -116,7 +116,12 @@ VOID RunLoader(VOID)
 	ULONG		DefaultOperatingSystem;
 	LONG		TimeOut;
 	ULONG		SelectedOperatingSystem;
-
+	ULONG 		KeyPress;
+	ULONG 		LastClockSecond;
+    ULONG 		CurrentClockSecond;
+	LONG		F8TimeOut;
+	UI_MENU_INFO MenuInformation;
+	
 	// FIXME: if possible, only detect and register ARC devices...
 	if (!MachHwDetect())
 	{
@@ -145,11 +150,18 @@ VOID RunLoader(VOID)
 	}
 	TimeOut = GetTimeOut();
 
+#ifdef FREELDR_ODYSSEY_SETUP
+	if (!SetupUiInitialize())
+	{
+		return;
+	}
+#else
 	if (!UiInitialize(1))
 	{
 		UiMessageBoxCritical("Unable to initialize UI.");
 		return;
 	}
+#endif
 
 	OperatingSystemList = InitOperatingSystemList(&OperatingSystemCount);
 	if (!OperatingSystemList)
@@ -196,7 +208,7 @@ VOID RunLoader(VOID)
 			UiMessageBox("Press ENTER to reboot.");
 			goto reboot;
 		}
-
+	
 		TimeOut = -1;
 
 		// Try to open the operating system section in the .ini file
@@ -236,6 +248,46 @@ VOID RunLoader(VOID)
 		DriveMapMapDrivesInSection(SectionName);
 #endif
 
+#ifndef FREELDR_ODYSSEY_SETUP
+		// Check to see if the GetTimeOut returns 0 which means do not show menu, which then this F8
+		// notice is important, otherwise skip this as we already showed a menu that allowed F8.
+		if(GetTimeOut() == 0)
+		{
+			LastClockSecond = ArcGetTime()->Second;
+			F8TimeOut = 3;
+			
+			UiVtbl.F8Notice();
+			
+			// For the F8 Menu, it needs to know a few things, so lets give it this information.
+			MenuInformation.MenuItemList = OperatingSystemDisplayNames;
+			MenuInformation.MenuItemCount = OperatingSystemCount;
+			MenuInformation.MenuTimeRemaining = 0;
+			MenuInformation.SelectedMenuItem = SelectedOperatingSystem;
+			
+			// Wait 3 seconds for the user to press F8 for recovery options.
+			while(TRUE)
+			{
+				// Get the updated time, seconds only
+				CurrentClockSecond = ArcGetTime()->Second;
+
+				// Check if more then a second has now elapsed
+				if (CurrentClockSecond != LastClockSecond)
+				{
+					// Update the time information
+					LastClockSecond = CurrentClockSecond;
+					F8TimeOut--;
+				}
+				
+				// 3 Seconds has passed, continue booting Odyssey
+				if (F8TimeOut == 0)
+					break;
+					
+				// Check to see if F8 was pressed, if so, show the F8 Recovery Menu.
+				KeyPress = TuiProcessMenuKeyboardEvent(&MenuInformation, MainBootMenuKeyPressFilter);
+			}
+		}
+#endif	
+	
 #ifdef FREELDR_ODYSSEY_SETUP
         // WinLdr-style boot
         LoadOdysseySetup();
