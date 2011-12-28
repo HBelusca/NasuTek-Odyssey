@@ -135,7 +135,7 @@ CreateCommonFreeLoaderSections(PINICACHE IniCache)
                           NULL,
                           INSERT_LAST,
                           L"TimeOut",
-                          L"10");
+                          L"0");
     }
 #endif
 
@@ -468,32 +468,32 @@ CreateFreeLoaderIniForReactos(
                           L"");
 
     /* Odyssey_Debug */
-    CreateFreeLoaderEntry(IniCache, IniSection,
-                          L"Odyssey_Debug", L"\"Odyssey (Debug)\"",
-                          L"Windows2003", ArcPath,
-                          L"/DEBUG /DEBUGPORT=COM1 /BAUDRATE=115200 /SOS");
+    //    CreateFreeLoaderEntry(IniCache, IniSection,
+    //                          L"Odyssey_Debug", L"\"Odyssey (Debug)\"",
+    //                          L"Windows2003", ArcPath,
+    //                          L"/DEBUG /DEBUGPORT=COM1 /BAUDRATE=115200 /SOS");
 
-#if DBG
-#ifndef _WINKD_
+    //#if DBG
+    //#ifndef _WINKD_
     /* Odyssey_KdSerial */
-    CreateFreeLoaderEntry(IniCache, IniSection,
-                          L"Odyssey_KdSerial", L"\"Odyssey (RosDbg)\"",
-                          L"Windows2003", ArcPath,
-                          L"/DEBUG /DEBUGPORT=COM1 /BAUDRATE=115200 /SOS /KDSERIAL");
-#endif
+    //    CreateFreeLoaderEntry(IniCache, IniSection,
+    //                          L"Odyssey_KdSerial", L"\"Odyssey (RosDbg)\"",
+    //                          L"Windows2003", ArcPath,
+    //                          L"/DEBUG /DEBUGPORT=COM1 /BAUDRATE=115200 /SOS /KDSERIAL");
+    //#endif
 
     /* Odyssey_LogFile */
-    CreateFreeLoaderEntry(IniCache, IniSection,
-                          L"Odyssey_LogFile", L"\"Odyssey (Log file)\"",
-                          L"Windows2003", ArcPath,
-                          L"/DEBUG /DEBUGPORT=FILE /SOS");
-
+    //    CreateFreeLoaderEntry(IniCache, IniSection,
+    //                          L"Odyssey_LogFile", L"\"Odyssey (Log file)\"",
+    //                          L"Windows2003", ArcPath,
+    //                          L"/DEBUG /DEBUGPORT=FILE /SOS");
+    
     /* Odyssey_Ram */
-    CreateFreeLoaderEntry(IniCache, IniSection,
-                          L"Odyssey_Ram", L"\"Odyssey (RAM Disk)\"",
-                          L"Odyssey", L"ramdisk(0)\\Odyssey",
-                          L"/DEBUG /DEBUGPORT=COM1 /BAUDRATE=115200 /SOS /RDIMAGEPATH=odyssey.img /RDIMAGEOFFSET=32256");
-#endif
+    //CreateFreeLoaderEntry(IniCache, IniSection,
+    //                          L"Odyssey_Ram", L"\"Odyssey (RAM Disk)\"",
+    //                          L"Odyssey", L"ramdisk(0)\\Odyssey",
+    //                          L"/DEBUG /DEBUGPORT=COM1 /BAUDRATE=115200 /SOS /RDIMAGEPATH=odyssey.img /RDIMAGEOFFSET=32256");
+    //#endif
 
     /* Save the ini file */
     IniCacheSave(IniCache, IniPath);
