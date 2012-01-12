@@ -34,9 +34,9 @@ UCHAR	UiTitleBoxFgColor			= COLOR_WHITE;			// Title box foreground color
 UCHAR	UiTitleBoxBgColor			= COLOR_RED;			// Title box background color
 UCHAR	UiMessageBoxFgColor			= COLOR_WHITE;			// Message box foreground color
 UCHAR	UiMessageBoxBgColor			= COLOR_BLUE;			// Message box background color
-UCHAR	UiMenuFgColor				= COLOR_WHITE;			// Menu foreground color
-UCHAR	UiMenuBgColor				= COLOR_BLUE;			// Menu background color
-UCHAR	UiTextColor					= COLOR_YELLOW;			// Normal text color
+UCHAR	UiMenuFgColor				= COLOR_GRAY;			// Menu foreground color
+UCHAR	UiMenuBgColor				= COLOR_BLACK;			// Menu background color
+UCHAR	UiTextColor					= COLOR_GRAY;			// Normal text color
 UCHAR	UiSelectedTextColor			= COLOR_BLACK;			// Selected text color
 UCHAR	UiSelectedTextBgColor		= COLOR_GRAY;			// Selected text background color
 UCHAR	UiEditBoxTextColor			= COLOR_WHITE;			// Edit box text color
@@ -45,10 +45,10 @@ UCHAR	UiEditBoxBgColor			= COLOR_BLACK;			// Edit box text background color
 CHAR	UiTitleBoxTitleText[260]	= "Boot Menu";			// Title box's title text
 
 BOOLEAN	UiUseSpecialEffects			= FALSE;				// Tells us if we should use fade effects
-BOOLEAN	UiDrawTime					= TRUE;					// Tells us if we should draw the time
-BOOLEAN	UiCenterMenu				= TRUE;					// Tells us if we should use a centered or left-aligned menu
-BOOLEAN	UiMenuBox					= TRUE;					// Tells us if we shuld draw a box around the menu
-CHAR	UiTimeText[260] = "[Time Remaining: ] ";
+BOOLEAN	UiDrawTime					= FALSE;					// Tells us if we should draw the time
+BOOLEAN	UiCenterMenu				= FALSE;					// Tells us if we should use a centered or left-aligned menu
+BOOLEAN	UiMenuBox					= FALSE;					// Tells us if we shuld draw a box around the menu
+CHAR	UiTimeText[260] = "Seconds until highlighted choice will be started automatically: ";
 
 const CHAR	UiMonthNames[12][15] = { "January ", "February ", "March ", "April ", "May ", "June ", "July ", "August ", "September ", "October ", "November ", "December " };
 
@@ -80,7 +80,6 @@ UIVTBL UiVtbl =
 BOOLEAN UiInitialize(BOOLEAN ShowGui)
 {
 	VIDEODISPLAYMODE	UiDisplayMode; // Tells us if we are in text or graphics mode
-	BOOLEAN	UiMinimal = FALSE; // Tells us if we should use a minimal console-like UI
 	ULONG_PTR SectionId;
 	CHAR	DisplayModeText[260];
 	CHAR	SettingText[260];
@@ -98,19 +97,6 @@ BOOLEAN UiInitialize(BOOLEAN ShowGui)
 	TRACE("Initializing User Interface.\n");
 	TRACE("Reading in UI settings from [Display] section.\n");
 
-	DisplayModeText[0] = '\0';
-	if (IniOpenSection("Display", &SectionId))
-	{
-		if (! IniReadSettingByName(SectionId, "DisplayMode", DisplayModeText, sizeof(DisplayModeText)))
-		{
-			DisplayModeText[0] = '\0';
-		}
-		if (IniReadSettingByName(SectionId, "MinimalUI", SettingText, sizeof(SettingText)))
-		{
-			UiMinimal = (_stricmp(SettingText, "Yes") == 0 && strlen(SettingText) == 3);
-		}
-	}
-
 	UiDisplayMode = MachVideoSetDisplayMode(DisplayModeText, TRUE);
 	MachVideoGetDisplaySize(&UiScreenWidth, &UiScreenHeight, &Depth);
 
@@ -121,98 +107,6 @@ BOOLEAN UiInitialize(BOOLEAN ShowGui)
 	{
 		MachVideoSetDisplayMode(NULL, FALSE);
 		return FALSE;
-	}
-
-	if (IniOpenSection("Display", &SectionId))
-	{
-		if (IniReadSettingByName(SectionId, "TitleText", SettingText, sizeof(SettingText)))
-		{
-			strcpy(UiTitleBoxTitleText, SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "TimeText", SettingText, sizeof(SettingText)))
-		{
-			strcpy(UiTimeText, SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "StatusBarColor", SettingText, sizeof(SettingText)))
-		{
-			UiStatusBarBgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "StatusBarTextColor", SettingText, sizeof(SettingText)))
-		{
-			UiStatusBarFgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "BackdropTextColor", SettingText, sizeof(SettingText)))
-		{
-			UiBackdropFgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "BackdropColor", SettingText, sizeof(SettingText)))
-		{
-			UiBackdropBgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "BackdropFillStyle", SettingText, sizeof(SettingText)))
-		{
-			UiBackdropFillStyle = UiTextToFillStyle(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "TitleBoxTextColor", SettingText, sizeof(SettingText)))
-		{
-			UiTitleBoxFgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "TitleBoxColor", SettingText, sizeof(SettingText)))
-		{
-			UiTitleBoxBgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "MessageBoxTextColor", SettingText, sizeof(SettingText)))
-		{
-			UiMessageBoxFgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "MessageBoxColor", SettingText, sizeof(SettingText)))
-		{
-			UiMessageBoxBgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "MenuTextColor", SettingText, sizeof(SettingText)))
-		{
-			UiMenuFgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "MenuColor", SettingText, sizeof(SettingText)))
-		{
-			UiMenuBgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "TextColor", SettingText, sizeof(SettingText)))
-		{
-			UiTextColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "SelectedTextColor", SettingText, sizeof(SettingText)))
-		{
-			UiSelectedTextColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "SelectedColor", SettingText, sizeof(SettingText)))
-		{
-			UiSelectedTextBgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "EditBoxTextColor", SettingText, sizeof(SettingText)))
-		{
-			UiEditBoxTextColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "EditBoxColor", SettingText, sizeof(SettingText)))
-		{
-			UiEditBoxBgColor = UiTextToColor(SettingText);
-		}
-		if (IniReadSettingByName(SectionId, "SpecialEffects", SettingText, sizeof(SettingText)))
-		{
-			UiUseSpecialEffects = (_stricmp(SettingText, "Yes") == 0 && strlen(SettingText) == 3);
-		}
-		if (IniReadSettingByName(SectionId, "ShowTime", SettingText, sizeof(SettingText)))
-		{
-			UiDrawTime = (_stricmp(SettingText, "Yes") == 0 && strlen(SettingText) == 3);
-		}
-		if (IniReadSettingByName(SectionId, "MenuBox", SettingText, sizeof(SettingText)))
-		{
-			UiMenuBox = (_stricmp(SettingText, "Yes") == 0 && strlen(SettingText) == 3);
-		}
-		if (IniReadSettingByName(SectionId, "CenterMenu", SettingText, sizeof(SettingText)))
-		{
-			UiCenterMenu = (_stricmp(SettingText, "Yes") == 0 && strlen(SettingText) == 3);
-		}
 	}
 
 	// Draw the backdrop and fade it in if special effects are enabled
@@ -401,6 +295,7 @@ VOID UiDrawProgressBar(ULONG Left, ULONG Top, ULONG Right, ULONG Bottom, ULONG P
 
 VOID UiShowMessageBoxesInSection(PCSTR SectionName)
 {
+#if 0
 	ULONG		Idx;
 	CHAR	SettingName[80];
 	CHAR	SettingValue[80];
@@ -447,6 +342,7 @@ VOID UiShowMessageBoxesInSection(PCSTR SectionName)
 			}
 		}
 	}
+#endif
 }
 
 VOID UiEscapeString(PCHAR String)

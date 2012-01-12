@@ -471,14 +471,14 @@ LoadAndBootWindows(PCSTR OperatingSystemName,
 
 	// Open the operating system section
 	// specified in the .ini file
-	HasSection = IniOpenSection(OperatingSystemName, &SectionId);
+	HasSection = TRUE;
 
 	UiDrawBackdrop();
 	UiDrawProgressBarCenter(1, 100, "Starting Odyssey...");
 
 	/* Read the system path is set in the .ini file */
 	if (!HasSection ||
-	    !IniReadSettingByName(SectionId, "SystemPath", BootPath, sizeof(BootPath)))
+	    !OcdReadSetting(OperatingSystemName, L"SystemPath", &BootPath, sizeof(BootPath)))
 	{
 		strcpy(BootPath, OperatingSystemName);
 	}
@@ -496,7 +496,7 @@ LoadAndBootWindows(PCSTR OperatingSystemName,
 		strcat(BootPath, "\\");
 
 	/* Read booting options */
-	if (!HasSection || !IniReadSettingByName(SectionId, "Options", BootOptions, sizeof(BootOptions)))
+	if (!HasSection || !OcdReadSetting(OperatingSystemName, L"Options", &BootOptions, sizeof(BootOptions)))
 	{
 		/* Get options after the title */
 		const CHAR*p = SettingsValue;

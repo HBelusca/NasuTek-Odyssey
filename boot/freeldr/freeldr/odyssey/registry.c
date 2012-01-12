@@ -24,6 +24,8 @@
 DBG_DEFAULT_CHANNEL(REGISTRY);
 
 static FRLDRHKEY RootKey;
+static ULONG OcdRegistryLength;
+static ULONG_PTR OcdRegistryBase;
 
 VOID
 RegInitializeRegistry (VOID)
@@ -50,6 +52,11 @@ RegInitializeRegistry (VOID)
     RegCreateKey (RootKey,
                   L"Registry\\Machine\\SYSTEM",
                   NULL);
+
+    /* Create 'BootConfiguration' key */
+    RegCreateKey (RootKey,
+                  L"Registry\\Machine\\BootConfiguration",
+                  NULL);                 
 }
 
 
@@ -753,6 +760,98 @@ RegGetValueCount (FRLDRHKEY Key)
     if (Key->DataSize != 0) return Key->ValueCount + 1;
 
     return Key->ValueCount;
+}
+
+BOOLEAN OcdLoadHive(IN LPCSTR DirectoryPath, IN LPCSTR HiveName)
+{
+	ULONG FileId;
+	CHAR FullHiveName[256];
+	LONG Status;
+	FILEINFORMATION FileInfo;
+	ULONG HiveFileSize;
+	ULONG_PTR HiveDataPhysical;
+	PVOID HiveDataVirtual;
+	ULONG BytesRead;
+	LPCWSTR FsService;
+
+	/* Concatenate path and filename to get the full name */
+	strcpy(FullHiveName, DirectoryPath);
+	strcat(FullHiveName, HiveName);
+	//Print(L"Loading %s...\n", FullHiveName);
+	Status = ArcOpen(FullHiveName, OpenReadOnly, &FileId);
+
+	if (Status != ESUCCESS)
+	{
+		UiMessageBox("Opening hive file failed!");
+		return FALSE;
+	}
+
+	/* Get the file length */
+	Status = ArcGetFileInformation(FileId, &FileInfo);
+
+	if (Status != ESUCCESS)
+	{
+		ArcClose(FileId);
+		UiMessageBox("Hive file has 0 size!");
+		return FALSE;
+	}
+	HiveFileSize = FileInfo.EndingAddress.LowPart;
+
+	/* Round up the size to page boundary and alloc memory */
+	HiveDataPhysical = (ULONG_PTR)MmAllocateMemoryWithType(
+		MM_SIZE_TO_PAGES(HiveFileSize + MM_PAGE_SIZE - 1) << MM_PAGE_SHIFT,
+		LoaderRegistryData);
+
+	if (HiveDataPhysical == 0)
+	{
+		ArcClose(FileId);
+		UiMessageBox("Unable to alloc memory for a hive!");
+		return FALSE;
+	}
+
+	/* Convert address to virtual */
+    HiveDataVirtual = PaToVa((PVOID)HiveDataPhysical);
+
+	/* Fill LoaderBlock's entries */
+	OcdRegistryLength = HiveFileSize;
+	OcdRegistryBase = HiveDataVirtual;
+
+	/* Finally read from file to the memory */
+	Status = ArcRead(FileId, (PVOID)HiveDataPhysical, HiveFileSize, &BytesRead);
+	if (Status != ESUCCESS)
+	{
+		ArcClose(FileId);
+		UiMessageBox("Unable to read from hive file!");
+		return FALSE;
+	}
+
+	ArcClose(FileId);
+	return TRUE;
+}
+
+BOOLEAN OcdInitHive(IN LPCSTR DirectoryPath)
+{
+	BOOLEAN Status;
+
+	// There is a simple logic here: try to load usual hive (system), if it
+	// fails, then give system.alt a try, and finally try a system.sav
+
+	// FIXME: For now we only try system
+	Status = OcdLoadHive(DirectoryPath, "OCD");
+
+	// Fail if failed...
+	if (!Status)
+		return FALSE;
+
+	// Import what was loaded
+	Status = OcdImportBinaryHive((PCHAR)VaToPa(OcdRegistryBase), OcdRegistryLength);
+	if (!Status)
+	{
+		UiMessageBox("Importing binary hive failed!");
+		return FALSE;
+	}
+
+	return TRUE;
 }
 
 /* EOF */

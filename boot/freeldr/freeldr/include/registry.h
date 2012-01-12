@@ -59,6 +59,9 @@ typedef struct _REG_VALUE
 VOID
 RegInitializeRegistry(VOID);
 
+BOOLEAN OcdInitHive(IN LPCSTR DirectoryPath);
+BOOLEAN OcdLoadHive(IN LPCSTR DirectoryPath, IN LPCSTR HiveName);
+
 LONG
 RegInitCurrentControlSet(BOOLEAN LastKnownGood);
 
@@ -117,6 +120,9 @@ RegGetSubKeyCount (FRLDRHKEY Key);
 ULONG
 RegGetValueCount (FRLDRHKEY Key);
 
+BOOLEAN
+OcdImportBinaryHive (PCHAR ChunkBase,
+		     ULONG ChunkSize);
 
 BOOLEAN
 RegImportBinaryHive (PCHAR ChunkBase,

@@ -32,15 +32,10 @@ ULONG	 GetDefaultOperatingSystem(OperatingSystemItem* OperatingSystemList, ULONG
 	ULONG	DefaultOS = 0;
 	ULONG	Idx;
 
-	if (!IniOpenSection("FreeLoader", &SectionId))
-	{
-		return 0;
-	}
-
 	DefaultOSName = CmdLineGetDefaultOS();
 	if (NULL == DefaultOSName)
 	{
-		if (IniReadSettingByName(SectionId, "DefaultOS", DefaultOSText, sizeof(DefaultOSText)))
+		if (OcdReadSetting(L"{freeldr}", L"Default", &DefaultOSText, sizeof(DefaultOSText)))
 		{
 			DefaultOSName = DefaultOSText;
 		}
@@ -73,12 +68,7 @@ LONG GetTimeOut(VOID)
 		return TimeOut;
 	}
 
-	if (!IniOpenSection("FreeLoader", &SectionId))
-	{
-		return -1;
-	}
-
-	if (IniReadSettingByName(SectionId, "TimeOut", TimeOutText, sizeof(TimeOutText)))
+	if (OcdReadSetting(L"{freeldr}", L"Timeout", &TimeOutText, sizeof(TimeOutText)))
 	{
 		TimeOut = atoi(TimeOutText);
 	}
@@ -137,17 +127,12 @@ VOID RunLoader(VOID)
 	}
 #endif
 
-	if (!IniFileInitialize())
+	if (!OcdInitialize())
 	{
-		UiMessageBoxCritical("Error initializing .ini file");
+		UiMessageBoxCritical("Error initializing OCD");
 		return;
 	}
-
-	if (!IniOpenSection("FreeLoader", &SectionId))
-	{
-		UiMessageBoxCritical("Section [FreeLoader] not found in freeldr.ini.");
-		return;
-	}
+    
 	TimeOut = GetTimeOut();
 
 #ifdef FREELDR_ODYSSEY_SETUP
@@ -214,13 +199,11 @@ VOID RunLoader(VOID)
 		// Try to open the operating system section in the .ini file
 		SettingValue[0] = ANSI_NULL;
 		SectionName = OperatingSystemList[SelectedOperatingSystem].SystemPartition;
-		if (IniOpenSection(SectionName, &SectionId))
+		
+        if (!OcdReadSetting(SectionName, L"BootType", &BootType, sizeof(BootType)))
 		{
-			// Try to read the boot type
-			IniReadSettingByName(SectionId, "BootType", BootType, sizeof(BootType));
-		}
-		else
 			BootType[0] = ANSI_NULL;
+		}	
 
 		if (BootType[0] == ANSI_NULL && SectionName[0] != ANSI_NULL)
 		{
@@ -240,8 +223,7 @@ VOID RunLoader(VOID)
 		}
 
 		// Get OS setting value
-		IniOpenSection("Operating Systems", &SectionId);
-		IniReadSettingByName(SectionId, SectionName, SettingValue, sizeof(SettingValue));
+        OcdReadSetting(SectionName, L"Name", &SettingValue, sizeof(SettingValue));
 
 		// Install the drive mapper according to this sections drive mappings
 #if defined(_M_IX86) && !defined(_MSC_VER)

@@ -34,6 +34,12 @@ static PCSTR CopyString(PCSTR Source)
 	return Dest;
 }
 
+struct ObjectInfoHolder
+{
+    WCHAR Name[256];
+};
+typedef struct ObjectInfoHolder ObjectHolder;
+
 OperatingSystemItem* InitOperatingSystemList(ULONG* OperatingSystemCountPointer)
 {
 	ULONG Idx;
@@ -43,21 +49,65 @@ OperatingSystemItem* InitOperatingSystemList(ULONG* OperatingSystemCountPointer)
 	PCHAR TitleStart, TitleEnd;
 	PCSTR OsLoadOptions;
 	ULONG Count;
+    ULONG Index;
+    ULONG ValueSize;
 	OperatingSystemItem* Items;
+    FRLDRHKEY OcdObjects;
+    ULONG rc;
+    BOOLEAN ret;
+    WCHAR ObjectName[256];
+    WCHAR ObjectValue[256];
+    WCHAR ObjectFriendlyName[256];
+    WCHAR ObjectLoadOptions[256];
+    ObjectHolder *Objects;
+    
+    Objects = MmHeapAlloc(255 * sizeof(ObjectHolder));
+    
+	//
+    // First get the Ocd Object Key
+    //
+    ret = OcdGetObjectKey(&OcdObjects);
+    
+    if (!ret)
+    {
+        return NULL;
+    }
+    
+    //
+    // Now lets get each object name and count of object for the rest of the functions
+    //
+	Count = 0;
+    Index = 0;
+    
+    while (TRUE)
+    {
+        /* Get the Driver's Name */
+        ValueSize = sizeof(ObjectName);
+        rc = RegEnumKey(OcdObjects, Index, ObjectName, &ValueSize);
+        //TRACE_CH(ODYSSEY, "RegEnumKey(): rc %d\n", (int)rc);
 
-	//
-	// Open the [FreeLoader] section
-	//
-	if (!IniOpenSection("Operating Systems", &SectionId))
-	{
-		return NULL;
-	}
+        /* Makre sure it's valid, and check if we're done */
+        if (rc == ERROR_NO_MORE_ITEMS)
+            break;
+        if (rc != ERROR_SUCCESS)
+        {
+            return NULL;
+        }
 
-	//
-	// Count number of operating systems in the section
-	//
-	Count = IniGetNumSectionItems(SectionId);
-
+        //
+        // Next see if it is type of BootItem, if so, add to the list of bootitems needed
+        // to be registered and increase the count val
+        //
+        ret = OcdReadSetting(ObjectName, L"ObjectType", &ObjectValue, sizeof(ObjectValue));
+        if(strcmp(ObjectValue, "BootItem"))
+        {
+            strcpy(ObjectName, Objects[Count].Name);
+            Count++;
+        }
+        
+        Index++;
+    }
+		
 	//
 	// Allocate memory to hold operating system lists
 	//
@@ -72,32 +122,17 @@ OperatingSystemItem* InitOperatingSystemList(ULONG* OperatingSystemCountPointer)
 	//
 	for (Idx = 0; Idx < Count; Idx++)
 	{
-		IniReadSettingByNumber(SectionId, Idx, SettingName, sizeof(SettingName), SettingValue, sizeof(SettingValue));
-
-		//
-		// Search start and end of the title
-		//
-		OsLoadOptions = NULL;
-		TitleStart = SettingValue;
-		while (*TitleStart == ' ' || *TitleStart == '"')
-			TitleStart++;
-		TitleEnd = TitleStart;
-		if (*TitleEnd != ANSI_NULL)
-			TitleEnd++;
-		while (*TitleEnd != ANSI_NULL && *TitleEnd != '"')
-			TitleEnd++;
-		if (*TitleEnd != ANSI_NULL)
-		{
-			*TitleEnd = ANSI_NULL;
-			OsLoadOptions = TitleEnd + 1;
-		}
-
+        strcpy(Objects[Idx].Name, ObjectName);
+        
+        OcdReadSetting(ObjectName, L"Name", &ObjectFriendlyName, sizeof(ObjectFriendlyName));
+        OcdReadSetting(ObjectName, L"Options", &ObjectLoadOptions, sizeof(ObjectLoadOptions));
+        
 		//
 		// Copy the system partition, identifier and options
 		//
-		Items[Idx].SystemPartition = CopyString(SettingName);
-		Items[Idx].LoadIdentifier = CopyString(TitleStart);
-		Items[Idx].OsLoadOptions = CopyString(OsLoadOptions);
+		Items[Idx].SystemPartition = CopyString(ObjectName);
+		Items[Idx].LoadIdentifier = CopyString(ObjectFriendlyName);
+		Items[Idx].OsLoadOptions = CopyString(ObjectLoadOptions);
 	}
 
 	//

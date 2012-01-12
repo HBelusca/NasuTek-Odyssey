@@ -165,5 +165,5 @@ VOID AppendBootTimeOptions(PCHAR BootOptions)
 		strcat(BootOptions, " /SAFEBOOT:DSREPAIR /SOS");
 
 	if (DebuggingMode)
-		strcat(BootOptions, " /DEBUG");
+		strcat(BootOptions, " /DEBUG /DEBUGPORT=COM1 /BAUDRATE=115200 /SOS /KDSERIAL");
 }

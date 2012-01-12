@@ -48,9 +48,7 @@ list(APPEND FREELDR_COMMON_SOURCE
     fs/iso.c
     fs/ntfs.c
     fs/pxe.c
-    inifile/ini_init.c
-    inifile/inifile.c
-    inifile/parse.c
+    ocd/ocd.c
     mm/meminit.c
     mm/mm.c
     odyssey/registry.c
@@ -64,7 +62,7 @@ list(APPEND FREELDR_COMMON_SOURCE
     ui/ui.c
     ui/tui.c
     ui/tuimenu.c
-	ui/setupui.c
+    ui/setupui.c
 
     video/fade.c
     video/palette.c
@@ -193,7 +191,7 @@ add_custom_target(freeldr ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/freeldr.sys)
 
 # rename freeldr on livecd to setupldr.sys because isoboot.bin search for setupldr.sys
 add_cd_file(TARGET freeldr FILE ${CMAKE_CURRENT_BINARY_DIR}/freeldr.sys DESTINATION loader NO_CAB FOR bootcd regtest)
-add_cd_file(TARGET freeldr FILE ${CMAKE_CURRENT_BINARY_DIR}/freeldr.sys DESTINATION loader NO_CAB FOR livecd NAME_ON_CD setupldr.sys)
+add_cd_file(TARGET freeldr FILE ${CMAKE_CURRENT_BINARY_DIR}/freeldr.sys DESTINATION loader NO_CAB FOR livecd instcd NAME_ON_CD setupldr.sys)
 
 list(APPEND SETUPLDR_SOURCE
     inffile/inffile.c)

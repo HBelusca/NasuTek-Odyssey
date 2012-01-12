@@ -144,9 +144,6 @@ BOOLEAN WinLdrInitSystemHive(IN OUT PLOADER_PARAMETER_BLOCK LoaderBlock,
 	if (!Status)
 		return FALSE;
 
-	// Initialize in-memory registry
-	RegInitializeRegistry();
-
 	// Import what was loaded
 	Status = RegImportBinaryHive((PCHAR)VaToPa(LoaderBlock->RegistryBase), LoaderBlock->RegistryLength);
 	if (!Status)

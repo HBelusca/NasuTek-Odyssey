@@ -63,12 +63,12 @@
 #include <disk.h>
 #include <fs.h>
 #include <inffile.h>
-#include <inifile.h>
 #include <keycodes.h>
 #include <linux.h>
 #include <machine.h>
 #include <mm.h>
 #include <multiboot.h>
+#include <ocd.h>
 #include <options.h>
 #include <oslist.h>
 #include <ramdisk.h>

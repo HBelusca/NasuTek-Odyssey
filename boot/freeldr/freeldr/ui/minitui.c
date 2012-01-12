@@ -49,7 +49,7 @@ VOID MiniTuiDrawProgressBarCenter(ULONG Position, ULONG Range, PCHAR ProgressTex
 
 	for (i=0; i<Width; i++)
 	{
-		TuiDrawText(Left+i, Top+3, "\xDD", ATTR(UiTextColor, UiMenuBgColor));
+		TuiDrawText(Left+i, Top+3, "\xDE", ATTR(UiTextColor, UiMenuBgColor));
 		//TuiDrawText(Left+2+i, Top+2, "\xDB", ATTR(COLOR_WHITE, COLOR_GRAY));
 	}
 
@@ -70,7 +70,7 @@ VOID MiniTuiF8Notice()
 
 	for (i=0; i<Width; i++)
 	{
-		TuiDrawText(Left+i, Top+3, "\xDD", ATTR(UiTextColor, UiMenuBgColor));
+		TuiDrawText(Left+i, Top+3, "\xDE", ATTR(UiTextColor, UiMenuBgColor));
 	}
 
 	TuiDrawText(Left, Bottom+2, "For troubleshooting and advanced startup options for Odyssey, press F8.", ATTR(UiTextColor, UiMenuBgColor));
@@ -101,7 +101,7 @@ VOID MiniTuiDrawProgressBar(ULONG Left, ULONG Top, ULONG Right, ULONG Bottom, UL
 	for (i=0; i<(Position*ProgressBarWidth)/Range; i++)
 	{
 	  TuiDrawText(Left+i, Top+3, "\xDB", ATTR(UiTextColor, UiMenuBgColor));
-	  //TuiDrawText(Left+2+i, Top+2, "\xDD", ATTR(COLOR_WHITE, COLOR_GRAY));
+	  //TuiDrawText(Left+2+i, Top+2, "\xDE", ATTR(COLOR_WHITE, COLOR_GRAY));
 	}
 
 	TuiUpdateDateTime();

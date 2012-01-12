@@ -338,4 +338,87 @@ RegImportBinaryHive(PCHAR ChunkBase,
   return TRUE;
 }
 
+BOOLEAN
+OcdImportBinaryHive(PCHAR ChunkBase,
+		    ULONG ChunkSize)
+{
+  PCM_KEY_NODE KeyCell;
+  PCM_KEY_FAST_INDEX HashCell;
+  PCM_KEY_NODE SubKeyCell;
+  FRLDRHKEY SystemKey;
+  ULONG i;
+  LONG Error;
+  PCMHIVE CmHive;
+  PHHIVE Hive;
+  NTSTATUS Status;
+
+  TRACE("RegImportBinaryHive(%x, %u) called\n",ChunkBase,ChunkSize);
+
+  CmHive = CmpAllocate(sizeof(CMHIVE), TRUE, 0);
+  Status = HvInitialize (&CmHive->Hive,
+                         HINIT_FLAT,
+                         0,
+                         0,
+                         ChunkBase, 
+                         CmpAllocate,
+                         CmpFree,
+                         NULL,
+                         NULL,
+                         NULL,
+                         NULL,
+                         1,
+                         NULL);
+  if (!NT_SUCCESS(Status))
+    {
+      CmpFree(CmHive, 0);
+      ERR("Invalid hive Signature!\n");
+      return FALSE;
+    }
+
+  Hive = &CmHive->Hive;
+  KeyCell = (PCM_KEY_NODE)HvGetCell (Hive, Hive->BaseBlock->RootCell);
+  TRACE("KeyCell: %x\n", KeyCell);
+  TRACE("KeyCell->Signature: %x\n", KeyCell->Signature);
+  if (KeyCell->Signature != CM_KEY_NODE_SIGNATURE)
+    {
+      ERR("Invalid key cell Signature!\n");
+      return FALSE;
+    }
+
+  TRACE("Subkeys: %u\n", KeyCell->SubKeyCounts);
+  TRACE("Values: %u\n", KeyCell->ValueList.Count);
+
+  /* Open 'BootConfiguration' key */
+  Error = RegOpenKey(NULL,
+             L"\\Registry\\Machine\\BootConfiguration",
+             &SystemKey);
+  if (Error != ERROR_SUCCESS)
+    {
+      ERR("Failed to open 'BootConfiguration' key!\n");
+      return FALSE;
+    }
+
+  /* Enumerate and add subkeys */
+  if (KeyCell->SubKeyCounts[Stable] > 0)
+    {
+      HashCell = (PCM_KEY_FAST_INDEX)HvGetCell (Hive, KeyCell->SubKeyLists[Stable]);
+      TRACE("HashCell: %x\n", HashCell);
+      TRACE("SubKeyCounts: %x\n", KeyCell->SubKeyCounts[Stable]);
+
+      for (i = 0; i < KeyCell->SubKeyCounts[Stable]; i++)
+        {
+          TRACE("Cell[%d]: %x\n", i, HashCell->List[i].Cell);
+
+          SubKeyCell = (PCM_KEY_NODE)HvGetCell (Hive, HashCell->List[i].Cell);
+
+          TRACE("SubKeyCell[%d]: %x\n", i, SubKeyCell);
+
+          if (!RegImportSubKey(Hive, SubKeyCell, SystemKey))
+            return FALSE;
+        }
+    }
+
+  return TRUE;
+}
+
 /* EOF */
