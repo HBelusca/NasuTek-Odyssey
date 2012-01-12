@@ -13,4 +13,4 @@ set_module_type(samsrv win32dll ENTRYPOINT 0 UNICODE)
 
 add_importlibs(samsrv kernel32 ntdll)
 add_dependencies(samsrv psdk)
-add_cd_file(TARGET samsrv DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET samsrv DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

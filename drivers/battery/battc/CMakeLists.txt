@@ -11,5 +11,5 @@ add_library(battc SHARED
 set_module_type(battc kernelmodedriver)
 add_importlibs(battc ntoskrnl hal)
 
-add_cd_file(TARGET battc DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET battc DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)
 add_importlib_target(battc.spec)

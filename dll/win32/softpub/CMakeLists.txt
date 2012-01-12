@@ -13,4 +13,4 @@ target_link_libraries(softpub wine)
 
 add_importlibs(softpub wintrust)
 
-add_cd_file(TARGET softpub DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET softpub DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

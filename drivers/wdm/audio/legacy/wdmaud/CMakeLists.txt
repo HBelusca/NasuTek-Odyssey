@@ -22,4 +22,4 @@ target_link_libraries(wdmaud
 
 add_pch(wdmaud wdmaud.h)
 add_importlibs(wdmaud ntoskrnl ks hal)
-add_cd_file(TARGET wdmaud DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET wdmaud DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

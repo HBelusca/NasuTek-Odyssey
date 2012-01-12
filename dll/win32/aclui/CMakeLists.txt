@@ -23,4 +23,4 @@ add_importlibs(aclui user32 gdi32 comctl32 ole32 oleaut32 advapi32 uxtheme msvcr
 
 add_pch(aclui precomp.h)
 
-add_cd_file(TARGET aclui DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET aclui DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

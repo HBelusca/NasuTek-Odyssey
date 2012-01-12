@@ -9,4 +9,4 @@ set_entrypoint(kbdinmal 0)
 
 add_dependencies(kbdinmal psdk)
 
-add_cd_file(TARGET kbdinmal DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdinmal DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

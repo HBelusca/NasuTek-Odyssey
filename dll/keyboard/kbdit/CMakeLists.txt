@@ -9,4 +9,4 @@ set_entrypoint(kbdit 0)
 
 add_dependencies(kbdit psdk)
 
-add_cd_file(TARGET kbdit DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdit DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

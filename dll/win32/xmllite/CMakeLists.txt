@@ -19,4 +19,4 @@ target_link_libraries(xmllite wine uuid)
 
 add_importlibs(xmllite msvcrt kernel32 ntdll)
 add_importlib_target(xmllite.spec)
-add_cd_file(TARGET xmllite DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET xmllite DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

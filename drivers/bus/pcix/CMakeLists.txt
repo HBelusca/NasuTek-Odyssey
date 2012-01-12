@@ -44,4 +44,4 @@ add_importlibs(pcix ntoskrnl hal)
 add_pch(pcix pci.h)
 add_dependencies(pcix pciclass)
 
-add_cd_file(TARGET pcix DESTINATION odyssey/system32/drivers NO_CAB FOR all)
+add_cd_file(TARGET pcix DESTINATION odyssey/system32/drivers NO_CAB ODYSSEY_PE FOR all)

@@ -48,5 +48,30 @@ add_custom_target(livecd
     DEPENDS native-cdmake
     VERBATIM)
 
+##instcd
+#clear it out
+file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/instcd.cmake 
+    "file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/instcd)\n")
+#create profiles directories too
+file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/instcd.cmake 
+    "file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/instcd/Profiles)\n")
+file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/instcd.cmake 
+    "file(MAKE_DIRECTORY \"${CMAKE_CURRENT_BINARY_DIR}/instcd/Profiles/All Users\")\n")
+file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/instcd.cmake 
+    "file(MAKE_DIRECTORY \"${CMAKE_CURRENT_BINARY_DIR}/instcd/Profiles/All Users/Desktop\")\n")
+file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/instcd.cmake 
+    "file(MAKE_DIRECTORY \"${CMAKE_CURRENT_BINARY_DIR}/instcd/Profiles/Default User\")\n")
+file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/instcd.cmake
+    "file(MAKE_DIRECTORY \"${CMAKE_CURRENT_BINARY_DIR}/instcd/Profiles/Default User/Desktop\")\n")
+file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/instcd.cmake
+    "file(MAKE_DIRECTORY \"${CMAKE_CURRENT_BINARY_DIR}/instcd/Profiles/Default User/My Documents\")\n")
+
+add_custom_target(instcd
+    ${CMAKE_COMMAND} -D CD_DIR=${CMAKE_CURRENT_BINARY_DIR}/instcd
+                             -P ${CMAKE_CURRENT_BINARY_DIR}/instcd.cmake
+    COMMAND native-cdmake -v -j -m -b ${CMAKE_CURRENT_BINARY_DIR}/freeldr/bootsect/isoboot.bin ${CMAKE_CURRENT_BINARY_DIR}/instcd ODYSSEY ${ODYSSEY_BINARY_DIR}/instcd.iso
+    DEPENDS native-cdmake
+    VERBATIM)
+    
 add_subdirectory(freeldr)
 add_subdirectory(bootdata)

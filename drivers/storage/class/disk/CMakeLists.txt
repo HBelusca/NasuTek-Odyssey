@@ -10,4 +10,4 @@ add_importlibs(disk
     ntoskrnl
     hal)
 
-add_cd_file(TARGET disk DESTINATION odyssey/system32/drivers NO_CAB FOR all)
+add_cd_file(TARGET disk DESTINATION odyssey/system32/drivers NO_CAB ODYSSEY_PE FOR all)

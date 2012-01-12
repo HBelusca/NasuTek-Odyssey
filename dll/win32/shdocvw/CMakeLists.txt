@@ -51,5 +51,5 @@ add_importlibs(shdocvw
 
 add_dependencies(shdocvw shdocvw_v1)
 add_pch(shdocvw shdocvw.h)
-add_cd_file(TARGET shdocvw DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET shdocvw DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(shdocvw.spec)

@@ -66,4 +66,4 @@ add_importlibs(browseui
     ntdll)
 
 add_pch(browseui precomp.h)
-add_cd_file(TARGET browseui DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET browseui DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

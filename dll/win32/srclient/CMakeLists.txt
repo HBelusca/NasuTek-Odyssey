@@ -12,4 +12,4 @@ set_entrypoint(srclient 0)
 add_importlibs(srclient kernel32 ntdll)
 add_dependencies(srclient psdk)
 
-add_cd_file(TARGET srclient DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET srclient DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

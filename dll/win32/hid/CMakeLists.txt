@@ -14,4 +14,4 @@ set_module_type(hid win32dll UNICODE)
 
 add_importlibs(hid msvcrt kernel32 ntdll)
 add_pch(hid precomp.h)
-add_cd_file(TARGET hid DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET hid DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

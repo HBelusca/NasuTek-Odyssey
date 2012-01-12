@@ -412,6 +412,9 @@ DoLoginTasks(
 	IN PWSTR Domain,
 	IN PWSTR Password)
 {
+	EndDialog(pgContext->hSasNotice, WLX_SAS_ACTION_NONE);
+	pgContext->hSasNotice = 0;
+			
 	LPWSTR ProfilePath = NULL;
 	LPWSTR lpEnvironment = NULL;
 	TOKEN_STATISTICS Stats;

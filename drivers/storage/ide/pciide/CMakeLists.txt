@@ -4,4 +4,4 @@ add_library(pciide SHARED pciide.c pciide.rc)
 set_module_type(pciide kernelmodedriver)
 add_importlibs(pciide pciidex ntoskrnl)
 
-add_cd_file(TARGET pciide DESTINATION odyssey/system32/drivers NO_CAB FOR all)
+add_cd_file(TARGET pciide DESTINATION odyssey/system32/drivers NO_CAB ODYSSEY_PE FOR all)

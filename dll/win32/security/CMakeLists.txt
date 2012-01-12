@@ -13,4 +13,4 @@ set_module_type(security win32dll ENTRYPOINT 0 UNICODE)
 
 add_importlibs(security secur32 advapi32 ntdll kernel32)
 
-add_cd_file(TARGET security DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET security DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

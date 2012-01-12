@@ -27,3 +27,4 @@
 
 /* Compatability with old resource scripts that arnt yet changed */
 #define IDI_ROSLOGO                             105
+#define IDI_LOCKICON							21

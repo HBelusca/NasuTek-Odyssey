@@ -36,5 +36,5 @@ endif()
 
 add_importlibs(msvcrt kernel32 ntdll)
 add_pch(msvcrt precomp.h)
-add_cd_file(TARGET msvcrt DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET msvcrt DESTINATION odyssey/system32 ODYSSEY_PE ODYSSEY_PE FOR all)
 add_importlib_target(msvcrt.spec)

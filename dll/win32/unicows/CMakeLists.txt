@@ -28,4 +28,4 @@ add_importlibs(unicows
     msvcrt
     kernel32
     ntdll)
-add_cd_file(TARGET unicows DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET unicows DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -9,4 +9,4 @@ set_entrypoint(kbda3 0)
 
 add_dependencies(kbda3 psdk)
 
-add_cd_file(TARGET kbda3 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbda3 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

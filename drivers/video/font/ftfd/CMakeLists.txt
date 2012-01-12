@@ -22,5 +22,5 @@ target_link_libraries(ftfd
 add_pch(ftfd ftfd.h)
 add_importlibs(ftfd win32k)
 add_dependencies(ftfd psdk)
-add_cd_file(TARGET ftfd DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET ftfd DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(ftfd.spec)

@@ -42,5 +42,5 @@ add_importlibs(ndis ntoskrnl hal)
 
 add_pch(ndis include/ndissys.h)
 
-add_cd_file(TARGET ndis DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET ndis DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)
 add_importlib_target(ndis.spec)

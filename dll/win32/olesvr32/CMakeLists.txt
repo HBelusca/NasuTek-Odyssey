@@ -17,4 +17,4 @@ target_link_libraries(olesvr32 wine)
 
 add_importlibs(olesvr32 kernel32 ntdll)
 add_dependencies(olesvr32 psdk)
-add_cd_file(TARGET olesvr32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET olesvr32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

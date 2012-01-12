@@ -40,4 +40,4 @@ add_importlibs(tcpip ndis ntoskrnl hal)
 
 add_pch(tcpip include/precomp.h)
 
-add_cd_file(TARGET tcpip DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET tcpip DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

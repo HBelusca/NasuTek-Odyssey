@@ -14,4 +14,4 @@ set_module_type(drmk kernelmodedriver ENTRYPOINT 0)
 
 add_importlibs(drmk ntoskrnl)
 add_importlib_target(drmk.spec)
-add_cd_file(TARGET drmk DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET drmk DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

@@ -8,4 +8,4 @@ set_entrypoint(kbdus 0)
 
 add_dependencies(kbdus psdk)
 
-add_cd_file(TARGET kbdus DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdus DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

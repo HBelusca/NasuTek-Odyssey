@@ -17,4 +17,4 @@ target_link_libraries(itircl wine)
 
 add_importlibs(itircl msvcrt kernel32 ntdll)
 add_dependencies(itircl psdk)
-add_cd_file(TARGET itircl DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET itircl DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

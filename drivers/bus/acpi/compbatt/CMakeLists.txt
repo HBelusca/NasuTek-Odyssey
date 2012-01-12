@@ -12,4 +12,4 @@ add_importlibs(compbatt ntoskrnl hal battc)
 
 add_pch(compbatt compbatt.h)
 
-add_cd_file(TARGET compbatt DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET compbatt DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

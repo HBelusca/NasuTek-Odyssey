@@ -9,4 +9,4 @@ set_entrypoint(kbdaze 0)
 
 add_dependencies(kbdaze psdk)
 
-add_cd_file(TARGET kbdaze DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdaze DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -53,4 +53,4 @@ if(ARCH MATCHES amd64)
     target_link_libraries(gdiplus crt)
 endif()
 
-add_cd_file(TARGET gdiplus DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET gdiplus DESTINATION odyssey/system32 ODYSSEY_PE ODYSSEY_PE FOR all)

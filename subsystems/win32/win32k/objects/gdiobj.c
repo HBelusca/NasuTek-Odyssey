@@ -1307,9 +1307,10 @@ GDI_CleanupForProcess(struct _EPROCESS *Process)
         }
     }
 
-//#ifdef GDI_DEBUG
+// AREYOUSERRIOUS?: Really? Commenting out a Debug Ifdef, Thats just dumb.
+#ifdef GDI_DEBUG
 	DbgGdiHTIntegrityCheck();
-//#endif
+#endif
 
     ppi = PsGetCurrentProcessWin32Process();
     DPRINT("Completed cleanup for process %d\n", Process->UniqueProcessId);

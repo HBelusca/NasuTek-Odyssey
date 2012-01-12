@@ -24,4 +24,4 @@ add_importlibs(cdfs ntoskrnl hal)
 
 add_pch(cdfs cdfs.h)
 
-add_cd_file(TARGET cdfs DESTINATION odyssey/system32/drivers NO_CAB FOR all)
+add_cd_file(TARGET cdfs DESTINATION odyssey/system32/drivers NO_CAB ODYSSEY_PE FOR all)

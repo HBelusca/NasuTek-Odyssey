@@ -13,4 +13,4 @@ add_library(modemui SHARED ${SOURCE})
 
 set_module_type(modemui win32dll UNICODE)
 add_importlibs(modemui msvcrt kernel32 ntdll)
-add_cd_file(TARGET modemui DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET modemui DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

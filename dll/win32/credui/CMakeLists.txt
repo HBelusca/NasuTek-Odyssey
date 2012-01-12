@@ -21,4 +21,4 @@ target_link_libraries(credui wine)
 
 add_importlibs(credui advapi32 user32 comctl32 msvcrt kernel32 ntdll)
 add_importlib_target(credui.spec)
-add_cd_file(TARGET credui DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET credui DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

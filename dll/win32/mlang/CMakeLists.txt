@@ -29,4 +29,4 @@ add_importlibs(mlang
 
 add_importlib_target(mlang.spec)
 add_dependencies(mlang psdk)
-add_cd_file(TARGET mlang DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET mlang DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

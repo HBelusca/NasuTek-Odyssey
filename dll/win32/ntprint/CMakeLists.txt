@@ -18,4 +18,4 @@ target_link_libraries(ntprint wine)
 
 add_importlibs(ntprint winspool msvcrt kernel32 ntdll)
 add_dependencies(ntprint psdk)
-add_cd_file(TARGET ntprint DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET ntprint DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

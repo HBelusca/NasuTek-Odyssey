@@ -88,4 +88,4 @@ add_importlibs(msxml3
     ntdll)
 
 add_dependencies(msxml3 msxml3_v1)
-add_cd_file(TARGET msxml3 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET msxml3 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

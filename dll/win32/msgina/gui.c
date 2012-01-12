@@ -156,16 +156,23 @@ GUIRemoveStatusMessage(
 }
 
 static INT_PTR CALLBACK
-EmptyWindowProc(
+SasNoticeWindowProc(
 	IN HWND hwndDlg,
 	IN UINT uMsg,
 	IN WPARAM wParam,
 	IN LPARAM lParam)
 {
-	UNREFERENCED_PARAMETER(hwndDlg);
-	UNREFERENCED_PARAMETER(uMsg);
-	UNREFERENCED_PARAMETER(wParam);
-	UNREFERENCED_PARAMETER(lParam);
+	PGINA_CONTEXT pgContext;
+	pgContext = (PGINA_CONTEXT)lParam;
+
+	switch(uMsg)
+	{
+		case WM_INITDIALOG:
+		{
+			pgContext->hSasNotice = hwndDlg;
+			return TRUE;
+		}
+	}
 
 	return FALSE;
 }
@@ -183,8 +190,8 @@ GUIDisplaySASNotice(
 		pgContext->hDllInstance,
 		MAKEINTRESOURCE(IDD_NOTICE_DLG),
 		GetDesktopWindow(),
-		EmptyWindowProc,
-		(LPARAM)NULL);
+		SasNoticeWindowProc,
+		(LPARAM)pgContext);
 	if (result == -1)
 	{
 		/* Failed to display the window. Do as if the user
@@ -313,6 +320,7 @@ LoggedOutWindowProc(
 		{
 			/* FIXME: take care of DontDisplayLastUserName, NoDomainUI, ShutdownWithoutLogon */
 			pgContext = (PGINA_CONTEXT)lParam;
+			
 			SetWindowLongPtr(hwndDlg, GWL_USERDATA, (DWORD_PTR)pgContext);
 			SetFocus(GetDlgItem(hwndDlg, IDC_USERNAME));
 

@@ -51,5 +51,5 @@ target_link_libraries(crypt32
     oldnames)
 
 add_importlibs(crypt32 user32 advapi32 msvcrt kernel32 ntdll)
-add_cd_file(TARGET crypt32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET crypt32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(crypt32.spec)

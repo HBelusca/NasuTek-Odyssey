@@ -8,4 +8,4 @@ add_library(pcmcia SHARED
 set_module_type(pcmcia kernelmodedriver)
 add_pch(pcmcia pcmcia.h)
 add_importlibs(pcmcia ntoskrnl hal)
-add_cd_file(TARGET pcmcia DESTINATION odyssey/system32/drivers NO_CAB FOR all)
+add_cd_file(TARGET pcmcia DESTINATION odyssey/system32/drivers NO_CAB ODYSSEY_PE FOR all)

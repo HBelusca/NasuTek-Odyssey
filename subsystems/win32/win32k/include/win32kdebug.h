@@ -150,12 +150,20 @@
     #define STUB         DbgPrint("WARNING:  %s at %s:%d is UNIMPLEMENTED!\n",__FUNCTION__,__FILE__,__LINE__);
 
 #else
-    #define DBG_GET_PPI 
-    #define DBG_DEFAULT_CHANNEL(x) ()
+    #define DISABLED_LEVEL
+    #define ERR_LEVEL
+    #define FIXME_LEVEL
+    #define WARN_LEVEL
+    #define TRACE_LEVEL
 
-    #define DBG_ENABLE_CHANNEL(ppi,ch,level) ()
-    #define DBG_DISABLE_CHANNEL(ppi,ch,level) ()
-    #define DBG_IS_CHANNEL_ENABLED(ppi,ch,level) ()
+    #define MAX_LEVEL
+    
+    #define DBG_GET_PPI 
+    #define DBG_DEFAULT_CHANNEL(x)
+
+    #define DBG_ENABLE_CHANNEL(ppi,ch,level)
+    #define DBG_DISABLE_CHANNEL(ppi,ch,level)
+    #define DBG_IS_CHANNEL_ENABLED(ppi,ch,level)
 
     #define DBG_PRINT(ppi,ch,level) 
 
@@ -175,6 +183,7 @@
     #define TRACE_PPI(ppi,ch,fmt, ...) 
 
     #define UNIMPLEMENTED
+    #define STUB
 #endif
 
 BOOL DbgInitDebugChannels();

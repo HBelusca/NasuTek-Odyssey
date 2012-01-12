@@ -11,4 +11,4 @@ add_library(serialui SHARED ${SOURCE})
 
 set_module_type(serialui win32dll UNICODE)
 add_importlibs(serialui user32 shlwapi msvcrt kernel32)
-add_cd_file(TARGET serialui DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET serialui DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -25,5 +25,5 @@ add_importlibs(opengl32
 
 add_pch(opengl32 opengl32.h)
 
-add_cd_file(TARGET opengl32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET opengl32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(opengl32.spec)

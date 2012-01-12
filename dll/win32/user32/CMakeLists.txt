@@ -75,5 +75,5 @@ target_link_libraries(user32
 add_delay_importlibs(user32 imm32)
 add_importlibs(user32 gdi32 advapi32 msvcrt kernel32 ntdll)
 add_pch(user32 include/user32.h)
-add_cd_file(TARGET user32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET user32 DESTINATION odyssey/system32 ODYSSEY_PE ODYSSEY_PE FOR all)
 add_importlib_target(user32.spec)

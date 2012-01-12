@@ -32,4 +32,4 @@ add_importlib_target(dhcpcsvc.spec)
 
 add_pch(dhcpcsvc include/rosdhcp.h)
 
-add_cd_file(TARGET dhcpcsvc DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET dhcpcsvc DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -14,4 +14,4 @@ add_importlibs(msfs ntoskrnl hal)
 
 add_pch(msfs msfs.h)
 
-add_cd_file(TARGET msfs DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET msfs DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

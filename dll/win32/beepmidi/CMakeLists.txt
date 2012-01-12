@@ -13,4 +13,4 @@ add_importlibs(beepmidi winmm kernel32 ntdll msvcrt)
 add_importlib_target(beepmidi.spec)
 
 add_dependencies(beepmidi psdk)
-add_cd_file(TARGET beepmidi DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET beepmidi DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

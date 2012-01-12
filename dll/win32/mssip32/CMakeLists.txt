@@ -17,4 +17,4 @@ target_link_libraries(mssip32 wine)
 
 add_importlibs(mssip32 msvcrt kernel32 ntdll)
 
-add_cd_file(TARGET mssip32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET mssip32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -14,4 +14,4 @@ add_importlibs(cmbatt ntoskrnl hal battc wmilib)
 add_pch(cmbatt cmbatt.h)
 
 
-add_cd_file(TARGET cmbatt DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET cmbatt DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

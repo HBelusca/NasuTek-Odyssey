@@ -15,4 +15,4 @@ target_link_libraries(msacm32.drv wine)
 
 add_importlibs(msacm32.drv msacm32 user32 winmm advapi32 kernel32 ntdll)
 add_dependencies(msacm32.drv psdk)
-add_cd_file(TARGET msacm32.drv DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET msacm32.drv DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -21,4 +21,4 @@ add_importlibs(odbccp32
     ntdll)
 
 add_importlib_target(odbccp32.spec)
-add_cd_file(TARGET odbccp32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET odbccp32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

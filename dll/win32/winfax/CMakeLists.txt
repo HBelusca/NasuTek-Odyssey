@@ -12,4 +12,4 @@ set_entrypoint(winfax 0)
 
 add_importlibs(winfax kernel32 ntdll)
 add_dependencies(winfax psdk)
-add_cd_file(TARGET winfax DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET winfax DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -18,4 +18,4 @@ set_module_type(msftedit win32dll)
 
 target_link_libraries(msftedit uuid wine)
 add_importlibs(msftedit riched20 msvcrt kernel32 ntdll)
-add_cd_file(TARGET msftedit DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET msftedit DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

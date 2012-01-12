@@ -9,4 +9,4 @@ set_entrypoint(kbdindev 0)
 
 add_dependencies(kbdindev psdk)
 
-add_cd_file(TARGET kbdindev DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdindev DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

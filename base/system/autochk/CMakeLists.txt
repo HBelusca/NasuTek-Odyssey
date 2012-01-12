@@ -5,4 +5,4 @@ set_module_type(autochk nativecui)
 
 target_link_libraries(autochk nt)
 add_importlibs(autochk ntdll)
-add_cd_file(TARGET autochk DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET autochk DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

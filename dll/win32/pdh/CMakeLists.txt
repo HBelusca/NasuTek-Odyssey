@@ -21,4 +21,4 @@ target_link_libraries(pdh wine)
 add_importlibs(pdh kernel32 ntdll msvcrt)
 add_importlib_target(pdh.spec)
 
-add_cd_file(TARGET pdh DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET pdh DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

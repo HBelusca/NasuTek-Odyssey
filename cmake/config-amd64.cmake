@@ -15,7 +15,7 @@ set (OPTIMIZE "1" CACHE STRING
   4 = -O2
   5 = -O3")
 
-set(DBG TRUE CACHE BOOL
+set(DBG FALSE CACHE BOOL
 "Whether to compile for debugging.")
 
 set(KDBG FALSE CACHE BOOL

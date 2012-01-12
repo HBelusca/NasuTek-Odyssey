@@ -24,5 +24,5 @@ add_importlibs(csrsrv ntdll smdll)
 add_pch(csrsrv srv.h)
 
 add_dependencies(csrsrv psdk bugcodes)
-add_cd_file(TARGET csrsrv DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET csrsrv DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(csrsrv.spec)

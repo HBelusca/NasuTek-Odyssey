@@ -9,4 +9,4 @@ set_entrypoint(kbdbgt 0)
 
 add_dependencies(kbdbgt psdk)
 
-add_cd_file(TARGET kbdbgt DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdbgt DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

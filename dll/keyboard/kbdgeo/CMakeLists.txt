@@ -9,4 +9,4 @@ set_entrypoint(kbdgeo 0)
 
 add_dependencies(kbdgeo psdk)
 
-add_cd_file(TARGET kbdgeo DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdgeo DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

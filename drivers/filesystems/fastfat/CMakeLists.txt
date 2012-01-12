@@ -30,4 +30,4 @@ add_importlibs(fastfat ntoskrnl hal)
 
 add_pch(fastfat vfat.h)
 
-add_cd_file(TARGET fastfat DESTINATION odyssey/system32/drivers NO_CAB FOR all)
+add_cd_file(TARGET fastfat DESTINATION odyssey/system32/drivers NO_CAB ODYSSEY_PE FOR all)

@@ -30,5 +30,5 @@ add_importlibs(devmgr
 
 add_pch(devmgr precomp.h)
 
-add_cd_file(TARGET devmgr DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET devmgr DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(devmgr.spec)

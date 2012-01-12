@@ -4,4 +4,4 @@ add_library(nmidebug SHARED nmidebug.c nmidebug.rc)
 set_module_type(nmidebug kernelmodedriver)
 add_importlibs(nmidebug ntoskrnl hal)
 
-add_cd_file(TARGET nmidebug DESTINATION odyssey/system32/drivers NO_CAB FOR all)
+add_cd_file(TARGET nmidebug DESTINATION odyssey/system32/drivers NO_CAB ODYSSEY_PE FOR all)

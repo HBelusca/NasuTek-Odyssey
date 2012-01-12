@@ -12,4 +12,4 @@ add_library(sermouse SHARED
 set_module_type(sermouse kernelmodedriver)
 add_pch(sermouse sermouse.h)
 add_importlibs(sermouse ntoskrnl hal)
-add_cd_file(TARGET sermouse DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET sermouse DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

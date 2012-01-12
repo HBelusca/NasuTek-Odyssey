@@ -9,4 +9,4 @@ set_entrypoint(kbdusa 0)
 
 add_dependencies(kbdusa psdk)
 
-add_cd_file(TARGET kbdusa DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdusa DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

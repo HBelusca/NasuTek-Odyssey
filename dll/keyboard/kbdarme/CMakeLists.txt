@@ -9,4 +9,4 @@ set_entrypoint(kbdarme 0)
 
 add_dependencies(kbdarme psdk)
 
-add_cd_file(TARGET kbdarme DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdarme DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

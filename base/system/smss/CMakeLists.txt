@@ -34,4 +34,4 @@ add_pch(smss smss.h)
 
 set_module_type(smss nativecui)
 add_importlibs(smss ntdll)
-add_cd_file(TARGET smss DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET smss DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -40,4 +40,4 @@ add_importlibs(win32csr user32 gdi32 advapi32 psapi msvcrt kernel32 ntdll)
 add_pch(win32csr w32csr.h)
 
 add_dependencies(win32csr bugcodes)
-add_cd_file(TARGET win32csr DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET win32csr DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

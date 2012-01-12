@@ -9,4 +9,4 @@ set_entrypoint(kbdmac 0)
 
 add_dependencies(kbdmac psdk)
 
-add_cd_file(TARGET kbdmac DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdmac DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -41,4 +41,4 @@ add_importlibs(avifil32
     ntdll)
 
 add_importlib_target(avifil32.spec)
-add_cd_file(TARGET avifil32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET avifil32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

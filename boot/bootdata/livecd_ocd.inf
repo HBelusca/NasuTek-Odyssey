@@ -1,0 +1,18 @@
+[Version]
+Signature = "$Odyssey$"
+
+[AddReg]
+
+;Global
+HKLM,"BootConfiguration\Objects\{freeldr}","Name",0x00020000,"FreeLoader Configuration"
+HKLM,"BootConfiguration\Objects\{freeldr}","ObjectType",0x00020000,"ConfigObj"
+HKLM,"BootConfiguration\Objects\{freeldr}","Timeout",0x00020000,"0"
+HKLM,"BootConfiguration\Objects\{freeldr}","Default",0x00020000,"{511E6BA2-6508-48DF-BEDD-08B58B1BF159}"
+
+HKLM,"BootConfiguration\Objects\{511E6BA2-6508-48DF-BEDD-08B58B1BF159}","Name",0x00020000,"Odyssey"
+HKLM,"BootConfiguration\Objects\{511E6BA2-6508-48DF-BEDD-08B58B1BF159}","ObjectType",0x00020000,"BootItem"
+HKLM,"BootConfiguration\Objects\{511E6BA2-6508-48DF-BEDD-08B58B1BF159}","BootType",0x00020000,"Windows2003"
+HKLM,"BootConfiguration\Objects\{511E6BA2-6508-48DF-BEDD-08B58B1BF159}","SystemPath",0x00020000,"LiveCD\odyssey"
+HKLM,"BootConfiguration\Objects\{511E6BA2-6508-48DF-BEDD-08B58B1BF159}","Options",0x00020000,"/MININT"
+
+; EOF

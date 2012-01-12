@@ -23,4 +23,4 @@ add_importlibs(wlanapi rpcrt4 msvcrt kernel32 ntdll)
 add_importlib_target(wlanapi.spec)
 
 add_dependencies(wlanapi psdk)
-add_cd_file(TARGET wlanapi DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET wlanapi DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

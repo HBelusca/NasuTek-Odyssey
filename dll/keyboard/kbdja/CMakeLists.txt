@@ -9,4 +9,4 @@ set_entrypoint(kbdja 0)
 
 add_dependencies(kbdja psdk)
 
-add_cd_file(TARGET kbdja DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdja DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -19,4 +19,4 @@ target_link_libraries(spoolss wine)
 add_importlibs(spoolss winspool msvcrt kernel32 ntdll)
 add_importlib_target(spoolss.spec)
 
-add_cd_file(TARGET spoolss DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET spoolss DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -14,4 +14,4 @@ target_link_libraries(kmixer
 
 add_pch(kmixer kmixer.h)
 add_importlibs(kmixer ntoskrnl ks hal)
-add_cd_file(TARGET kmixer DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET kmixer DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

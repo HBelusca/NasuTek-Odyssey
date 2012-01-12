@@ -42,4 +42,4 @@ add_importlibs(netshell
 
 add_pch(netshell precomp.h)
 
-add_cd_file(TARGET netshell DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET netshell DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

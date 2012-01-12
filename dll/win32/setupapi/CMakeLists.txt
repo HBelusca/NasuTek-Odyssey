@@ -54,5 +54,5 @@ add_importlibs(setupapi
     ntdll)
 
 add_pch(setupapi setupapi_private.h)
-add_cd_file(TARGET setupapi DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET setupapi DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(setupapi.spec)

@@ -23,4 +23,4 @@ add_importlibs(ntmarta
     kernel32
     ntdll)
 
-add_cd_file(TARGET ntmarta DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET ntmarta DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

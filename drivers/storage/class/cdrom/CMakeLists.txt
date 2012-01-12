@@ -11,4 +11,4 @@ add_importlibs(cdrom
     hal)
 
 add_pch(cdrom precomp.h)
-add_cd_file(TARGET cdrom DESTINATION odyssey/system32/drivers NO_CAB FOR all)
+add_cd_file(TARGET cdrom DESTINATION odyssey/system32/drivers NO_CAB ODYSSEY_PE FOR all)

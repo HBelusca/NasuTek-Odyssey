@@ -10,4 +10,4 @@ add_library(serenum SHARED
 add_pch(serenum serenum.h)
 set_module_type(serenum kernelmodedriver)
 add_importlibs(serenum ntoskrnl hal)
-add_cd_file(TARGET serenum DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET serenum DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

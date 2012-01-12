@@ -19,4 +19,4 @@ target_link_libraries(clusapi wine)
 
 add_importlibs(clusapi msvcrt kernel32 ntdll)
 
-add_cd_file(TARGET clusapi DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET clusapi DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

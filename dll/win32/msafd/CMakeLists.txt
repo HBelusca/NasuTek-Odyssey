@@ -21,4 +21,4 @@ set_module_type(msafd win32dll UNICODE)
 
 add_importlibs(msafd advapi32 msvcrt kernel32 ntdll)
 add_pch(msafd msafd.h)
-add_cd_file(TARGET msafd DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET msafd DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

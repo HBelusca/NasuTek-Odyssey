@@ -38,4 +38,4 @@ add_custom_target(odyssey_cab
     COMMAND native-cabman -C ${CMAKE_CURRENT_BINARY_DIR}/odyssey.dff -RC ${CMAKE_CURRENT_BINARY_DIR}/odyssey.inf -L ${CMAKE_CURRENT_BINARY_DIR} -N -P ${ODYSSEY_SOURCE_DIR}
     DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/odyssey.inf native-cabman)
 
-add_cd_file(TARGET odyssey_cab FILE ${CMAKE_CURRENT_BINARY_DIR}/odyssey.cab ${CMAKE_CURRENT_BINARY_DIR}/odyssey.inf DESTINATION odyssey NO_CAB FOR bootcd regtest)
+add_cd_file(TARGET odyssey_cab FILE ${CMAKE_CURRENT_BINARY_DIR}/odyssey.cab ${CMAKE_CURRENT_BINARY_DIR}/odyssey.inf DESTINATION odyssey NO_CAB FOR bootcd instcd regtest)

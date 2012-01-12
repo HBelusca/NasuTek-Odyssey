@@ -72,7 +72,7 @@ macro(dir_to_num dir var)
 endmacro()
 
 function(add_cd_file)
-    cmake_parse_arguments(_CD "NO_CAB" "DESTINATION;NAME_ON_CD;TARGET" "FILE;FOR" ${ARGN})
+    cmake_parse_arguments(_CD "NO_CAB;ODYSSEY_PE" "DESTINATION;NAME_ON_CD;TARGET" "FILE;FOR" ${ARGN})
     if(NOT (_CD_TARGET OR _CD_FILE))
         message(FATAL_ERROR "You must provide a target or a file to install!")
     endif()
@@ -94,7 +94,7 @@ function(add_cd_file)
 
     #do we add it to all CDs?
     if(_CD_FOR STREQUAL all)
-        set(_CD_FOR "bootcd;livecd;regtest")
+        set(_CD_FOR "bootcd;instcd;livecd;regtest")
     endif()
 
     #do we add it to bootcd?
@@ -129,6 +129,54 @@ function(add_cd_file)
             endif()
         endif()
     endif() #end bootcd
+
+    #do we add it to instcd?
+    list(FIND _CD_FOR instcd __cd)
+    if(NOT __cd EQUAL -1)
+        #whether or not we should put it in odyssey.cab or directly on cd
+        if(_CD_ODYSSEY_PE)
+            #Put it directly on the cd, essencially the same as NO_CAB but is ignored by bootcd (Text-mode setup) and
+            #adds the file path to an inf for GUI Stage 1 Setup.
+            foreach(item ${_CD_FILE})
+                file(APPEND ${ODYSSEY_BINARY_DIR}/boot/instcd.cmake "file(COPY \"${item}\" DESTINATION \"\${CD_DIR}/${_CD_DESTINATION}\")\n")
+            endforeach()
+            if(_CD_NAME_ON_CD)
+                get_filename_component(__file ${_CD_FILE} NAME)
+                #rename it in the cd tree
+                file(APPEND ${ODYSSEY_BINARY_DIR}/boot/instcd.cmake "file(RENAME \${CD_DIR}/${_CD_DESTINATION}/${__file} \${CD_DIR}/${_CD_DESTINATION}/${_CD_NAME_ON_CD})\n")
+            endif()
+            if(_CD_TARGET)
+                #manage dependency
+                add_dependencies(instcd ${_CD_TARGET})
+            endif()
+        elseif(_CD_NO_CAB)
+            #directly on cd
+            foreach(item ${_CD_FILE})
+                file(APPEND ${ODYSSEY_BINARY_DIR}/boot/instcd.cmake "file(COPY \"${item}\" DESTINATION \"\${CD_DIR}/${_CD_DESTINATION}\")\n")
+            endforeach()
+            if(_CD_NAME_ON_CD)
+                get_filename_component(__file ${_CD_FILE} NAME)
+                #rename it in the cd tree
+                file(APPEND ${ODYSSEY_BINARY_DIR}/boot/instcd.cmake "file(RENAME \${CD_DIR}/${_CD_DESTINATION}/${__file} \${CD_DIR}/${_CD_DESTINATION}/${_CD_NAME_ON_CD})\n")
+            endif()
+            if(_CD_TARGET)
+                #manage dependency
+                add_dependencies(instcd ${_CD_TARGET})
+            endif()
+        else()
+            #add it in odyssey.cab
+            dir_to_num(${_CD_DESTINATION} _num)
+            if(CMAKE_HOST_SYSTEM_NAME MATCHES Windows)
+                file(APPEND ${ODYSSEY_BINARY_DIR}/boot/bootdata/packages/odyssey.dff.dyn "${_CD_FILE} ${_num}\n")
+            else()
+                file(APPEND ${ODYSSEY_BINARY_DIR}/boot/bootdata/packages/odyssey.dff.dyn "\"${_CD_FILE}\" ${_num}\n")
+            endif()
+            if(_CD_TARGET)
+                #manage dependency
+                add_dependencies(odyssey_cab ${_CD_TARGET})
+            endif()
+        endif()
+    endif() #end instcd
 
     #do we add it to livecd?
     list(FIND _CD_FOR livecd __cd)

@@ -56,4 +56,4 @@ target_link_libraries(windowscodecs wine uuid)
 add_importlibs(windowscodecs ole32 shlwapi advapi32 msvcrt kernel32 ntdll)
 add_importlib_target(windowscodecs.spec)
 
-add_cd_file(TARGET windowscodecs DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET windowscodecs DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

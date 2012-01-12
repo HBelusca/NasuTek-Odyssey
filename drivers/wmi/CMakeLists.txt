@@ -12,4 +12,4 @@ set_module_type(wmilib kernelmodedriver ENTRYPOINT 0)
 
 add_importlibs(wmilib ntoskrnl)
 add_importlib_target(wmilib.spec)
-add_cd_file(TARGET wmilib DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET wmilib DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

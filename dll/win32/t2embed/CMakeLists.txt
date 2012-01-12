@@ -18,4 +18,4 @@ target_link_libraries(t2embed wine)
 
 add_importlibs(t2embed gdi32 user32 advapi32 version msvcrt kernel32 ntdll)
 
-add_cd_file(TARGET t2embed DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET t2embed DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

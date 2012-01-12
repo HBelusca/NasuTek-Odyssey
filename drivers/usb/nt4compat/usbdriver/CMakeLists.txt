@@ -32,4 +32,4 @@ add_importlibs(usbdriver ntoskrnl hal)
 
 add_pch(usbdriver usbdriver.h)
 
-add_cd_file(TARGET usbdriver DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET usbdriver DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

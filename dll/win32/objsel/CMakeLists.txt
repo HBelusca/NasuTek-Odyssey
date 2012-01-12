@@ -30,4 +30,4 @@ add_importlibs(objsel
     ntdll)
 
 add_pch(objsel objsel_private.h)
-add_cd_file(TARGET objsel DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET objsel DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

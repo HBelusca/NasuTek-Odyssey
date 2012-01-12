@@ -22,4 +22,4 @@ add_importlibs(odbc32
     kernel32
     ntdll)
 
-add_cd_file(TARGET odbc32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET odbc32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

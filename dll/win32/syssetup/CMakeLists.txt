@@ -33,4 +33,4 @@ add_importlibs(syssetup
     kernel32
     ntdll)
 
-add_cd_file(TARGET syssetup DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET syssetup DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

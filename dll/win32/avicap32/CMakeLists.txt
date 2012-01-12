@@ -13,5 +13,5 @@ target_link_libraries(avicap32 wine)
 
 add_importlibs(avicap32 advapi32 user32 version msvcrt kernel32 ntdll)
 
-add_cd_file(TARGET avicap32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET avicap32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(avicap32.spec)

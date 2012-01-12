@@ -61,4 +61,4 @@ add_importlibs(jscript
 
 add_pch(jscript jscript.h)
 add_dependencies(jscript jsglobal)
-add_cd_file(TARGET jscript DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET jscript DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

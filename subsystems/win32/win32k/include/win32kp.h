@@ -17,10 +17,13 @@
 #define INIT_FUNCTION
 #endif
 
+// NOOBCODE: If you gonna make debug code disableable, FREAKING MAKE IT DISABLEABLE
+#if DBG
 /* Enable debugging features */
 #define GDI_DEBUG 0
 #define DBG_ENABLE_EVENT_LOGGING 0
 #define DBG_ENABLE_SERVICE_HOOKS 0
+#endif
 
 /* misc headers  */
 #include <include/win32kdebug.h>

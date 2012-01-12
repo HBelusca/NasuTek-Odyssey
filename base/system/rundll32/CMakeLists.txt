@@ -6,4 +6,4 @@ add_executable(rundll32 rundll32.c rundll32.rc)
 
 set_module_type(rundll32 win32gui UNICODE)
 add_importlibs(rundll32 user32 msvcrt kernel32 ntdll)
-add_cd_file(TARGET rundll32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET rundll32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

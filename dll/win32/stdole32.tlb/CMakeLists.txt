@@ -16,4 +16,4 @@ set_entrypoint(stdole32.tlb 0)
 set_target_properties(stdole32.tlb PROPERTIES SUFFIX "")
 
 add_dependencies(stdole32.tlb std_ole_v1)
-add_cd_file(TARGET stdole32.tlb DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET stdole32.tlb DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

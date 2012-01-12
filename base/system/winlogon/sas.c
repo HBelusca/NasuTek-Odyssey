@@ -908,6 +908,7 @@ SASWindowProc(
 					TRACE("SAS: CONTROL+ALT+DELETE\n");
 					if (!Session->Gina.UseCtrlAltDelete)
 						break;
+					SwitchDesktop(Session->WinlogonDesktop);
 					PostMessageW(Session->SASWindow, WLX_WM_SAS, WLX_SAS_TYPE_CTRL_ALT_DEL, 0);
 					return TRUE;
 				}

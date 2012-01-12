@@ -6,4 +6,4 @@ target_link_libraries(null ${PSEH_LIB})
 set_module_type(null kernelmodedriver)
 add_importlibs(null ntoskrnl hal)
 
-add_cd_file(TARGET null DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET null DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

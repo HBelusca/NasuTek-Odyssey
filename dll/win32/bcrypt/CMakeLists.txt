@@ -18,4 +18,4 @@ target_link_libraries(bcrypt wine)
 
 add_importlibs(bcrypt msvcrt kernel32 ntdll)
 
-add_cd_file(TARGET bcrypt DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET bcrypt DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

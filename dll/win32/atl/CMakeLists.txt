@@ -40,4 +40,4 @@ add_importlibs(atl
 add_importlib_target(atl.spec)
 
 add_dependencies(atl atl_atliface_header)
-add_cd_file(TARGET atl DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET atl DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

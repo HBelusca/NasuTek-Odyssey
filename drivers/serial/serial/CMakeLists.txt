@@ -17,4 +17,4 @@ add_library(serial SHARED
 add_pch(serial serial.h)
 set_module_type(serial kernelmodedriver)
 add_importlibs(serial ntoskrnl hal)
-add_cd_file(TARGET serial DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET serial DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

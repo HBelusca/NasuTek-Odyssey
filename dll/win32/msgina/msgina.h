@@ -18,6 +18,7 @@ typedef struct
 	PWLX_DISPATCH_VERSION_1_3 pWlxFuncs;
 	HANDLE hDllInstance;
 	HWND hStatusWindow;
+	HWND hSasNotice;
 	DWORD AutoLogonState;
 
 	/* Informations to be filled during logon */

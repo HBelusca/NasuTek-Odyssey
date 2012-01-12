@@ -32,4 +32,4 @@ add_importlibs(localspl
     kernel32
     ntdll)
 
-add_cd_file(TARGET localspl DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET localspl DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

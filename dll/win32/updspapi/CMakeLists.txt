@@ -17,4 +17,4 @@ target_link_libraries(updspapi wine)
 add_importlibs(updspapi setupapi kernel32 ntdll)
 add_dependencies(updspapi psdk)
 
-add_cd_file(TARGET updspapi DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET updspapi DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

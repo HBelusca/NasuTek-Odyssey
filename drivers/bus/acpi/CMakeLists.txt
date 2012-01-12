@@ -150,7 +150,7 @@ target_link_libraries(acpi
 
 add_importlibs(acpi ntoskrnl hal)
 
-add_cd_file(TARGET acpi DESTINATION odyssey/system32/drivers NO_CAB FOR all)
+add_cd_file(TARGET acpi DESTINATION odyssey/system32/drivers NO_CAB ODYSSEY_PE FOR all)
 
 add_subdirectory(cmbatt)
 add_subdirectory(compbatt)

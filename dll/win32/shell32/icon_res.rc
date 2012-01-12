@@ -1,15 +1,15 @@
 IDI_SHELL_DOCUMENT          ICON "res/icons/1.ico"
 IDI_SHELL_RICH_TEXT         ICON "res/icons/2.ico"
 IDI_SHELL_EXE               ICON "res/icons/3.ico"
-IDI_SHELL_FOLDER            ICON "res/icons/4.ico"
+IDI_SHELL_FOLDER            ICON "res/icons/4.ico" /**/
 IDI_SHELL_FOLDER_OPEN       ICON "res/icons/5.ico"
 IDI_SHELL_5_12_FLOPPY       ICON "res/icons/6.ico"
-IDI_SHELL_3_14_FLOPPY       ICON "res/icons/7.ico"
+IDI_SHELL_3_14_FLOPPY       ICON "res/icons/7.ico" /**/
 IDI_SHELL_FLOPPY            ICON "res/icons/8.ico"
-IDI_SHELL_DRIVE             ICON "res/icons/9.ico"
+IDI_SHELL_DRIVE             ICON "res/icons/9.ico" /**/
 IDI_SHELL_NETDRIVE          ICON "res/icons/10.ico"
 IDI_SHELL_NETDRIVE2         ICON "res/icons/11.ico"  //THIS SHOULD BE IDI_SHELL_NETDRIVE_OFF
-IDI_SHELL_CDROM             ICON "res/icons/12.ico"
+IDI_SHELL_CDROM             ICON "res/icons/12.ico" /**/
 IDI_SHELL_RAMDISK           ICON "res/icons/13.ico"
 IDI_SHELL_ENTIRE_NETWORK    ICON "res/icons/14.ico"
 IDI_SHELL_NETWORK           ICON "res/icons/15.ico"
@@ -130,7 +130,7 @@ IDI_SHELL_DVDR_ROM          ICON "res/icons/298.ico"
 IDI_SHELL_MP3_PLAYER        ICON "res/icons/299.ico"
 /* TODO: 300.ico, 301.ico */
 IDI_SHELL_CD_ROM1           ICON "res/icons/302.ico"
-/* TODO: 303.ico */
+/* TODO: 303.ico */  /**/
 IDI_SHELL_DVD_ROM1          ICON "res/icons/304.ico"
 IDI_SHELL_FDD2              ICON "res/icons/305.ico"
 /* TODO: 306.ico, 307.ico, 308.ico */

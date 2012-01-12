@@ -13,4 +13,4 @@ add_library(xinput1_2 SHARED ${SOURCE})
 
 set_module_type(xinput1_2 win32dll)
 add_importlibs(xinput1_2 msvcrt kernel32 xinput1_3)
-add_cd_file(TARGET xinput1_2 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET xinput1_2 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

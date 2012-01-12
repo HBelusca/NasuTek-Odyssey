@@ -95,4 +95,4 @@ add_importlibs(mshtml
     ntdll)
 
 add_dependencies(mshtml mshtml_nsiface_header)
-add_cd_file(TARGET mshtml DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET mshtml DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

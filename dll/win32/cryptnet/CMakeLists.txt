@@ -21,4 +21,4 @@ add_importlibs(cryptnet
     ntdll)
 
 add_importlib_target(cryptnet.spec)
-add_cd_file(TARGET cryptnet DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET cryptnet DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

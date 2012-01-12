@@ -22,5 +22,5 @@ target_link_libraries(snmpapi wine)
 
 add_importlibs(snmpapi msvcrt kernel32 ntdll)
 
-add_cd_file(TARGET snmpapi DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET snmpapi DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(snmpapi.spec)

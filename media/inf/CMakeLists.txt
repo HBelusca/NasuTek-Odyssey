@@ -33,7 +33,7 @@ list(APPEND INF_FILES
 )
 
 foreach(item ${INF_FILES})
-    add_cd_file(FILE "${CMAKE_CURRENT_SOURCE_DIR}/${item}" DESTINATION odyssey/inf FOR all)
+    add_cd_file(FILE "${CMAKE_CURRENT_SOURCE_DIR}/${item}" DESTINATION odyssey/inf ODYSSEY_PE FOR all)
 endforeach(item)
 
-add_cd_file(FILE ${CMAKE_CURRENT_SOURCE_DIR}/syssetup.inf DESTINATION odyssey/inf FOR all)
+add_cd_file(FILE ${CMAKE_CURRENT_SOURCE_DIR}/syssetup.inf DESTINATION odyssey/inf ODYSSEY_PE FOR all)

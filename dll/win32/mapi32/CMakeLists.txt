@@ -23,4 +23,4 @@ set_module_type(mapi32 win32dll)
 
 target_link_libraries(mapi32 wine uuid)
 add_importlibs(mapi32 shlwapi shell32 user32 advapi32 msvcrt kernel32 ntdll)
-add_cd_file(TARGET mapi32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET mapi32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

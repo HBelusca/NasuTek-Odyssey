@@ -9,4 +9,4 @@ set_entrypoint(kbdazel 0)
 
 add_dependencies(kbdazel psdk)
 
-add_cd_file(TARGET kbdazel DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdazel DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

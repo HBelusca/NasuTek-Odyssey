@@ -9,4 +9,4 @@ set_entrypoint(kbdarmw 0)
 
 add_dependencies(kbdarmw psdk)
 
-add_cd_file(TARGET kbdarmw DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdarmw DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -14,4 +14,4 @@ target_link_libraries(shdoclc wine)
 add_importlibs(shdoclc kernel32 ntdll)
 add_dependencies(shdoclc psdk)
 
-add_cd_file(TARGET shdoclc DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET shdoclc DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

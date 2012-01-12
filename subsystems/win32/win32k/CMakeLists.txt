@@ -195,7 +195,7 @@ target_link_libraries(win32k
 
 add_importlibs(win32k ntoskrnl hal ftfd)
 add_pch(win32k pch.h)
-add_cd_file(TARGET win32k DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET win32k DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(win32k.spec)
 
 add_library(win32ksys sys-stubs.S)

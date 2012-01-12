@@ -9,4 +9,4 @@ set_entrypoint(kbdusx 0)
 
 add_dependencies(kbdusx psdk)
 
-add_cd_file(TARGET kbdusx DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdusx DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

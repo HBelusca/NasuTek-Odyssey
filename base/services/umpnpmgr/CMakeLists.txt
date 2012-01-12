@@ -18,4 +18,4 @@ target_link_libraries(umpnpmgr
 
 set_module_type(umpnpmgr win32cui UNICODE)
 add_importlibs(umpnpmgr advapi32 rpcrt4 userenv msvcrt kernel32 ntdll)
-add_cd_file(TARGET umpnpmgr DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET umpnpmgr DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

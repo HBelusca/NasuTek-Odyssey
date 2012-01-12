@@ -94,7 +94,7 @@ add_importlibs(msi
     ntdll)
 
 add_pch(msi msipriv.h)
-add_cd_file(TARGET msi DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET msi DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 
 endif(NOT MSVC)
 

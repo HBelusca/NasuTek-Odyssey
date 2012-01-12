@@ -8,8 +8,8 @@ CAPTION "Odyssey Setup"
 FONT 8, "MS Shell Dlg"
 BEGIN
     LTEXT "Welcome to the Odyssey Setup Wizard.", IDC_STARTTITLE, 115, 8, 195, 24
-    LTEXT "You cannot install Odyssey directly from this CD yet! Please restart your computer from this CD in order to install Odyssey.", IDC_STATIC, 115, 40, 195, 100
-    LTEXT "Click Finish to exit the Setup.", IDC_STATIC, 115, 169, 195, 17
+    LTEXT "This wizard installs Odyssey on your computer. The wizard needs to gather some information to begin installing Odyssey and to prepare for Stage 2 Setup.", IDC_STATIC, 115, 40, 195, 100
+    LTEXT "Click Next to continue with Setup.", IDC_STATIC, 115, 169, 195, 17
 END
 
 IDD_LANGSELPAGE DIALOGEX DISCARDABLE  0, 0, 317, 193

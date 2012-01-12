@@ -33,4 +33,4 @@ endif()
 add_importlibs(crtdll kernel32 ntdll)
 add_pch(crtdll precomp.h)
 
-add_cd_file(TARGET crtdll DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET crtdll DESTINATION odyssey/system32 ODYSSEY_PE ODYSSEY_PE FOR all)

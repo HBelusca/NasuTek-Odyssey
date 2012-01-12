@@ -9,4 +9,4 @@ set_entrypoint(kbdinguj 0)
 
 add_dependencies(kbdinguj psdk)
 
-add_cd_file(TARGET kbdinguj DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbdinguj DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

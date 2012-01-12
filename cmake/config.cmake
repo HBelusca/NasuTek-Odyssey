@@ -25,7 +25,7 @@ set(GDB FALSE CACHE BOOL
 "Whether to compile for debugging with GDB.
 If you don't use GDB, don't	enable this.")
 
-set(DBG TRUE CACHE BOOL
+set(DBG FALSE CACHE BOOL
 "Whether to compile for debugging.")
 
 if(MSVC)

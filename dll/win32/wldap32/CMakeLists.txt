@@ -38,4 +38,4 @@ target_link_libraries(wldap32 wine)
 
 add_importlibs(wldap32 user32 msvcrt kernel32 ntdll)
 add_importlib_target(wldap32.spec)
-add_cd_file(TARGET wldap32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET wldap32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

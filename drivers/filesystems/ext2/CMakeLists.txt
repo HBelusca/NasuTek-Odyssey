@@ -28,4 +28,4 @@ add_pch(ext2fs inc/ext2fsd.h)
 set_module_type(ext2fs kernelmodedriver)
 add_importlibs(ext2fs ntoskrnl hal)
 
-add_cd_file(TARGET ext2fs DESTINATION odyssey/system32/drivers NO_CAB FOR all)
+add_cd_file(TARGET ext2fs DESTINATION odyssey/system32/drivers NO_CAB ODYSSEY_PE FOR all)

@@ -64,5 +64,5 @@ add_pch(advapi32 advapi32.h
     ${CMAKE_CURRENT_BINARY_DIR}/lsa_c.h
     ${CMAKE_CURRENT_BINARY_DIR}/eventlogrpc_c.h)
 
-add_cd_file(TARGET advapi32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET advapi32 DESTINATION odyssey/system32 ODYSSEY_PE ODYSSEY_PE FOR all)
 add_importlib_target(advapi32.spec)

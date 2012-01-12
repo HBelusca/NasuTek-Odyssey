@@ -24,4 +24,4 @@ target_link_libraries(rpcss
 set_module_type(rpcss win32cui UNICODE)
 
 add_importlibs(rpcss advapi32 rpcrt4 msvcrt kernel32 ntdll)
-add_cd_file(TARGET rpcss DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET rpcss DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

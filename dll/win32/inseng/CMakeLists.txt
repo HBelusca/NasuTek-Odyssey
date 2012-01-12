@@ -27,4 +27,4 @@ add_importlibs(inseng
     kernel32
     ntdll)
 
-add_cd_file(TARGET inseng DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET inseng DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

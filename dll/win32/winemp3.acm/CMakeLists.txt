@@ -25,4 +25,4 @@ add_importlibs(winemp3.acm
     ntdll)
 
 add_dependencies(winemp3.acm psdk)
-add_cd_file(TARGET winemp3.acm DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET winemp3.acm DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -8,6 +8,10 @@
 
 /** INCLUDES ******************************************************************/
 
+// I know this is a beta operating system, but JESUS, least make Debug Checks
+// Disableable!
+#if DBG
+
 #include <win32k.h>
 #define NDEBUG
 #include <debug.h>
@@ -728,3 +732,4 @@ BOOL DbgInitDebugChannels()
     return ret;
 }
 
+#endif

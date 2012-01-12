@@ -17,4 +17,4 @@ target_link_libraries(sxs wine)
 add_importlibs(sxs kernel32 ntdll)
 add_dependencies(sxs psdk)
 
-add_cd_file(TARGET sxs DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET sxs DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -22,4 +22,4 @@ add_importlibs(vga videoprt)
 
 add_pch(vga vga.h)
 
-add_cd_file(TARGET vga DESTINATION odyssey/system32/drivers FOR all)
+add_cd_file(TARGET vga DESTINATION odyssey/system32/drivers ODYSSEY_PE FOR all)

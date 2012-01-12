@@ -16,5 +16,5 @@ set_module_type(compstui win32dll)
 target_link_libraries(compstui wine)
 
 add_importlibs(compstui msvcrt kernel32 ntdll)
-add_cd_file(TARGET compstui DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET compstui DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(compstui.spec)

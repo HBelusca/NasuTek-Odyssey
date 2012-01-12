@@ -19,4 +19,4 @@ target_link_libraries(olethk32 wine)
 
 add_importlibs(olethk32 msvcrt kernel32 ntdll)
 add_dependencies(olethk32 psdk)
-add_cd_file(TARGET olethk32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET olethk32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

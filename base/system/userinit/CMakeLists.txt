@@ -8,4 +8,4 @@ target_link_libraries(userinit wine)
 
 set_module_type(userinit win32gui UNICODE)
 add_importlibs(userinit user32 gdi32 advapi32 shell32 shlwapi msvcrt kernel32 ntdll)
-add_cd_file(TARGET userinit DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET userinit DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -39,5 +39,5 @@ add_importlibs(comdlg32
     kernel32
     ntdll)
 
-add_cd_file(TARGET comdlg32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET comdlg32 DESTINATION odyssey/system32 ODYSSEY_PE ODYSSEY_PE FOR all)
 add_importlib_target(comdlg32.spec)

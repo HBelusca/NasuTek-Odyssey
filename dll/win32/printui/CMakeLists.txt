@@ -18,4 +18,4 @@ target_link_libraries(printui wine)
 
 add_importlibs(printui shell32 kernel32 ntdll)
 add_dependencies(printui psdk)
-add_cd_file(TARGET printui DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET printui DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

@@ -6,4 +6,4 @@ add_library(wsock32 SHARED stubs.c wsock32.rc ${CMAKE_CURRENT_BINARY_DIR}/wsock3
 set_module_type(wsock32 win32dll UNICODE)
 
 add_importlibs(wsock32 mswsock ws2_32 msvcrt kernel32 ntdll)
-add_cd_file(TARGET wsock32 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET wsock32 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

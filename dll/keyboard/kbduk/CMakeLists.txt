@@ -9,4 +9,4 @@ set_entrypoint(kbduk 0)
 
 add_dependencies(kbduk psdk)
 
-add_cd_file(TARGET kbduk DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbduk DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

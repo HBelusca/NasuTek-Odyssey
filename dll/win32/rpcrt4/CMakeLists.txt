@@ -48,5 +48,5 @@ target_link_libraries(rpcrt4 wine uuid ${PSEH_LIB})
 
 add_delay_importlibs(rpcrt4 iphlpapi wininet secur32 user32)
 add_importlibs(rpcrt4 msvcrt advapi32 ws2_32 kernel32 ntdll)
-add_cd_file(TARGET rpcrt4 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET rpcrt4 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
 add_importlib_target(rpcrt4.spec)

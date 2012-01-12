@@ -50,4 +50,4 @@ add_importlibs(actxprxy
 
 add_definitions(-DREGISTER_PROXY_DLL -DPROXY_DELEGATION)
 
-add_cd_file(TARGET actxprxy DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET actxprxy DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

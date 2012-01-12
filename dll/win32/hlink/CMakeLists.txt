@@ -27,4 +27,4 @@ add_importlibs(hlink
 
 add_pch(hlink hlink_private.h)
 add_importlib_target(hlink.spec)
-add_cd_file(TARGET hlink DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET hlink DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

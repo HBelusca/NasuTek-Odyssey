@@ -12,4 +12,4 @@ add_library(getuname SHARED
 add_importlib_target(getuname.spec)
 set_module_type(getuname win32dll UNICODE)
 add_importlibs(getuname msvcrt kernel32 ntdll)
-add_cd_file(TARGET getuname DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET getuname DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

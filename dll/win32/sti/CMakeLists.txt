@@ -40,4 +40,4 @@ add_importlibs(sti
     kernel32
     ntdll)
 
-add_cd_file(TARGET sti DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET sti DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

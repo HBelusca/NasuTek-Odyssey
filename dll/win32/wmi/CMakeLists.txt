@@ -11,4 +11,4 @@ set_entrypoint(wmi 0)
 
 add_importlibs(wmi advapi32)
 add_dependencies(wmi psdk)
-add_cd_file(TARGET wmi DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET wmi DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

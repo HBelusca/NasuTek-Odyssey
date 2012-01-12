@@ -52,4 +52,4 @@ add_importlibs(riched20
 
 add_pch(riched20 editor.h)
 add_importlib_target(riched20.spec)
-add_cd_file(TARGET riched20 DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET riched20 DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

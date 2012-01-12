@@ -9,4 +9,4 @@ set_entrypoint(kbddv 0)
 
 add_dependencies(kbddv psdk)
 
-add_cd_file(TARGET kbddv DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET kbddv DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

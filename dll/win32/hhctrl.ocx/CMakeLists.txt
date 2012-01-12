@@ -40,4 +40,4 @@ add_importlibs(hhctrl
 
 add_dependencies(hhctrl wineheaders)
 add_pch(hhctrl hhctrl.h)
-add_cd_file(TARGET hhctrl DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET hhctrl DESTINATION odyssey/system32 ODYSSEY_PE FOR all)

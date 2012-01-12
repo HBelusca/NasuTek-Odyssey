@@ -35,4 +35,4 @@ add_importlibs(itss
     ntdll)
 
 add_dependencies(itss wineheaders)
-add_cd_file(TARGET itss DESTINATION odyssey/system32 FOR all)
+add_cd_file(TARGET itss DESTINATION odyssey/system32 ODYSSEY_PE FOR all)
