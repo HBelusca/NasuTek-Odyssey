@@ -11,6 +11,7 @@
 /* INCLUDES ******************************************************************/
 
 #include <win32k.h>
+#include "buildno.h"
 
 DBG_DEFAULT_CHANNEL(UserDesktop);
 
@@ -217,19 +218,40 @@ static int GetSystemVersionString(LPWSTR buffer)
    if (!NT_SUCCESS(RtlGetVersion((PRTL_OSVERSIONINFOW)&versionInfo)))
       return 0;
 
-   if (versionInfo.dwMajorVersion <= 4)
+   if(!UserGetSystemMetrics(SM_CLEANBOOT))
+   {
       len = swprintf(buffer,
-                     L"Odyssey Version %d.%d %s Build %d",
+                     L"Odyssey \"Antares\" Version %d.%d %s",
                      versionInfo.dwMajorVersion, versionInfo.dwMinorVersion,
-                     versionInfo.szCSDVersion, versionInfo.dwBuildNumber&0xFFFF);
+                     versionInfo.szCSDVersion);
+   }
    else
+   {
+      /* Safe Mode */
       len = swprintf(buffer,
-                     L"Odyssey %s (Build %d)",
-                     versionInfo.szCSDVersion, versionInfo.dwBuildNumber&0xFFFF);
-
+                     L"Odyssey \"Antares\" Version %d.%d %s Build %d.%s",
+                     versionInfo.dwMajorVersion, versionInfo.dwMinorVersion,
+                     versionInfo.szCSDVersion, KERNEL_VERSION_BUILD_STRL);
+   }
    return len;
 }
 
+static int GetSystemBuildString(LPWSTR buffer)
+{
+   RTL_OSVERSIONINFOEXW versionInfo;
+   int len;
+
+   versionInfo.dwOSVersionInfoSize = sizeof(RTL_OSVERSIONINFOEXW);
+
+   if (!NT_SUCCESS(RtlGetVersion((PRTL_OSVERSIONINFOW)&versionInfo)))
+      return 0;
+
+   len = swprintf(buffer,
+                  L"For testing purposes only. Build %d.%s",
+                  versionInfo.dwBuildNumber&0xFFFF, KERNEL_VERSION_BUILD_STRL);
+
+   return len;
+}
 
 NTSTATUS FASTCALL
 IntParseDesktopPath(PEPROCESS Process,
@@ -1344,6 +1366,7 @@ NtUserPaintDesktop(HDC hDC)
    PWND WndDesktop;
     static WCHAR s_wszSafeMode[] = L"Safe Mode";
    int len;
+   int buildLen;
    COLORREF color_old;
    UINT align_old;
    int mode_old;
@@ -1489,18 +1512,21 @@ NtUserPaintDesktop(HDC hDC)
     * Display system version on the desktop background
     */
 
-   if (g_PaintDesktopVersion||UserGetSystemMetrics(SM_CLEANBOOT))
+   if (g_PaintDesktopVersion||UserGetSystemMetrics(SM_CLEANBOOT)||!UserGetSystemMetrics(SM_CLEANBOOT))
    {
       static WCHAR s_wszVersion[256] = {0};
+      static WCHAR s_wszBuild[256] = {0};
       RECTL rect;
 
       if (*s_wszVersion)
       {
          len = wcslen(s_wszVersion);
+         buildLen = wcslen(s_wszBuild);
       }
       else
       {
          len = GetSystemVersionString(s_wszVersion);
+         buildLen = GetSystemBuildString(s_wszBuild);
       }
 
       if (len)
@@ -1517,7 +1543,8 @@ NtUserPaintDesktop(HDC hDC)
 
             if(!UserGetSystemMetrics(SM_CLEANBOOT))
             {
-                GreExtTextOutW(hDC, rect.right-16, rect.bottom-48, 0, NULL, s_wszVersion, len, NULL, 0);
+                GreExtTextOutW(hDC, rect.right-4, rect.bottom-24, 0, NULL, s_wszVersion, len, NULL, 0);
+                GreExtTextOutW(hDC, rect.right-4, rect.bottom-13, 0, NULL, s_wszBuild, buildLen, NULL, 0);
             }
             else
             {
